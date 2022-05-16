@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>For Loop</title>
+    <style>
+       html {
+    color: black;
+    font-size: 16px;
+    font-family: Arial;
+    
+    background-color: white;
+}
+body {
+    background-color: #efcda490;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+}
+main {
+    border-radius: 6px;
+    padding: 20px;
+}
+main section{
+    background: url(../images/logo.png)no-repeat center;
+    background-size: cover;
+    margin-top:-20px ;
+}
+main header h1 {
+    background-color: #5e5c5f;
+    border-radius: 6px;
+    color: white;
+    padding: 20px;
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+}
+main nav.menu ul {
+    list-style: none;
+    margin: 40px auto;
+    width: 320px;
+    padding: 10px;
+}
+main nav.menu ul li{
+    margin: 10px;
+}
+main nav.menu ul li a:link,
+main nav.menu ul li a:visited {
+    background-color: #55302798;
+    border-radius: 6px;
+    color: black;
+    display: block;
+    margin: 4px 0px;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+}
+main nav.menu ul li a span{
+    border-radius: 6px 6px 6px 6px;
+    display:block;
+    background-color: rgb(196, 196, 196);
+    padding: 20px;
+    color: #3c3c3c;
+}
+main nav.menu ul li a{
+    border-radius: 2px 2px 2px 2px;
+    display: inline-block;
+    background-color: white;
+}
+main nav.menu ul li a:hover {
+    background-color: #00000030;
+    color: #ffffff;
+    transform: scale(1.04);
+}
+main header h1 a:link,
+main header h1 a:visited {
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    transition: all 0.2s ease-in;
+    
+}
+main header h1 a:hover {
+    transform: translateX(-10px);
+}
+article{
+    background: white;
+    overflow: auto;
+}
+header nav a{
+    position: absolute;
+    color: white;
+    display: inline-block;
+    font-size: 2rem;
+    bottom: 460px;
+    margin-left: 10px;
+    
+}
+button{
+    background: url(../../01-emmet/images/devolver.svg) no-repeat;
+    width: 73px;
+    height: 73px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    
+}
+button.home{
+    background: url(../../../imagesF/home.png) no-repeat;
+    width: 73px;
+    height: 73px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    
+}
+button:hover{
+    transform: scale(1.2);
+}
+article *{
+    padding: 20px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <header> 
+        <nav> 
+          <h1>For Loop</h1><a href="./"> 
+            <button></button></a>
+        </nav>
+      </header>
+    </main>
+    <h1>For Loop</h1>
+    <ul>
+      <li>Element 1</li>
+      <li>Element 2</li>
+      <li>Element 3</li>
+      <li>Element 4</li>
+      <li>Element 5</li>
+      <li>Element 6</li>
+      <li>Element 7</li>
+      <li>Element 8</li>
+      <li>Element 9</li>
+      <li>Element 10</li>
+      <li>Element 11</li>
+      <li>Element 12</li>
+      <li>Element 13</li>
+      <li>Element 14</li>
+      <li>Element 15</li>
+      <li>Element 16</li>
+      <li>Element 17</li>
+      <li>Element 18</li>
+      <li>Element 19</li>
+      <li>Element 20</li>
+    </ul>
+    <table border="1">
+      <tr>
+        <td>F1 C1</td>
+        <td>F1 C2</td>
+        <td>F1 C3</td>
+        <td>F1 C4</td>
+        <td>F1 C5</td>
+        <td>F1 C6</td>
+        <td>F1 C7</td>
+        <td>F1 C8</td>
+        <td>F1 C9</td>
+        <td>F1 C10</td>
+      </tr>
+      <tr>
+        <td>F2 C1</td>
+        <td>F2 C2</td>
+        <td>F2 C3</td>
+        <td>F2 C4</td>
+        <td>F2 C5</td>
+        <td>F2 C6</td>
+        <td>F2 C7</td>
+        <td>F2 C8</td>
+        <td>F2 C9</td>
+        <td>F2 C10</td>
+      </tr>
+      <tr>
+        <td>F3 C1</td>
+        <td>F3 C2</td>
+        <td>F3 C3</td>
+        <td>F3 C4</td>
+        <td>F3 C5</td>
+        <td>F3 C6</td>
+        <td>F3 C7</td>
+        <td>F3 C8</td>
+        <td>F3 C9</td>
+        <td>F3 C10</td>
+      </tr>
+      <tr>
+        <td>F4 C1</td>
+        <td>F4 C2</td>
+        <td>F4 C3</td>
+        <td>F4 C4</td>
+        <td>F4 C5</td>
+        <td>F4 C6</td>
+        <td>F4 C7</td>
+        <td>F4 C8</td>
+        <td>F4 C9</td>
+        <td>F4 C10</td>
+      </tr>
+      <tr>
+        <td>F5 C1</td>
+        <td>F5 C2</td>
+        <td>F5 C3</td>
+        <td>F5 C4</td>
+        <td>F5 C5</td>
+        <td>F5 C6</td>
+        <td>F5 C7</td>
+        <td>F5 C8</td>
+        <td>F5 C9</td>
+        <td>F5 C10</td>
+      </tr>
+    </table>
+  </body>
+</html>

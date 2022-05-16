@@ -1,0 +1,19 @@
+docytpe
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		title Iterations
+		style 
+			include css/mainpug.css
+	body
+		main
+			header 
+				nav 
+					h1 Iterations
+					a(href="./") 
+						button
+		h1 Iterations
+		ul
+			each val, index in ['yellow', 'blue', 'red', 'green', 'purple']
+				li(style='background-color:'+val)= index + ': ' + val
+	

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative units</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        html{
+            font-size: 16px;
+        }
+        /* em */
+        /*cambia de padre*/
+        h2.ems{
+            font-size: 2em;
+        }
+        /* rem */
+        /*no cambia de padre*/
+        h2.rems{
+            font-size: 3rem;
+        }
+        /* ex */
+        h2.exs{
+            font-size: 4ex;
+        }
+        /* px/vh/vw */
+        section{
+            margin: 0 auto;
+            width: 80vw;
+            background-color: royalblue;
+            padding: 10px;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <a href="./">⬅</a> Relative units</h1>
+        </header>
+        <section>
+            <h2 class="ems">Lorem Ipsum dolor(2em)</h2>
+            <h2 class="rems">Lorem Ipsum dolor(3rem)</h2>
+            <h2 class="exs">Lorem Ipsum dolor(4ex)</h2>
+
+        </section>
+    </main>
+</body>
+</html>

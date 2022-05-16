@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challengue Calculator</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+         
+         header h1{
+            font-size: 1.7rem;
+            line-height: 3.8rem;
+           
+            
+            
+            
+        }
+        article{
+            background: url(images/calcu/1.Wireframe\(HiFi\).png) no-repeat center;
+            padding-top: 1px;
+            margin-bottom: 1000px;
+            height: 630px;
+            
+            
+            
+          
+        }
+        div.calculator{
+            margin: 40px auto;
+            width: 324px;
+            height: 580px;
+            
+        }
+        header.display {
+            background: url(images/calcu/Display.png) no-repeat;
+            width: 324px;
+            height: 80px;
+            position: relative;
+            
+            
+            
+            
+
+            
+        }
+        header.display span#Result{
+            background: none;
+            border: none;
+            position: absolute;
+            color: black;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            right: 10px;
+            top: 20px;
+            text-align: right;
+            width: 285px;
+            letter-spacing: 1px;
+            outline: none;
+            
+            
+        }
+        div.controlls{
+            margin: 10px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(62px,1fr));
+            row-gap: 10px;
+            column-gap: 8px;
+            
+        }
+        div.controlls input{
+            height: 70px;
+            width: 70px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        div.controlls input:hover{
+            transform: scale(1.2);
+        }
+        
+        .logo{
+            background: url(images/calcu/marca.png) no-repeat;
+            position: relative;
+            width: 237px;
+            height: 68px;
+            left: 40px;
+        }
+        input#btn-clear{
+            background: url(images/calcu/btn-clear.png) no-repeat center;
+            width: 120px;
+            position: relative;
+            left: 103px;
+            height: 80px;
+            border: none;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            
+        }
+        input#btn-clear:hover{
+            transform: scale(1.2);
+        }
+        input#btn-1{
+            background: url(images/calcu/btn-1.png) no-repeat center;
+        }
+        input#btn-2{
+            background: url(images/calcu/btn-2.png) no-repeat center;
+        }
+        input#btn-3{
+            background: url(images/calcu/btn-3.png) no-repeat center;
+        }
+        input#btn-multiplication{
+            background: url(images/calcu/btn-multiplication.png) no-repeat center;
+        }
+        input#btn-4{
+            background: url(images/calcu/btn-4.png) no-repeat center;
+        }
+        input#btn-5{
+            background: url(images/calcu/btn-5.png) no-repeat center;
+        }
+        input#btn-6{
+            background: url(images/calcu/btn-6.png) no-repeat center;
+        }
+        input#btn-rest{
+            background: url(images/calcu/btn-rest.png) no-repeat center;
+        }
+        input#btn-7{
+            background: url(images/calcu/btn-7.png) no-repeat center;
+        }
+        input#btn-8{
+            background: url(images/calcu/btn-8.png) no-repeat center;
+        }
+        input#btn-9{
+            background: url(images/calcu/btn-9.png) no-repeat center;
+        }
+        input#btn-sum{
+            background: url(images/calcu/btn-sum.png) no-repeat center;
+        }
+        input#btn-div{
+            background: url(images/calcu/btn-div.png) no-repeat center;
+        }
+        input#btn-0{
+            background: url(images/calcu/btn-0.png) no-repeat center;
+        }
+        input#btn-punt{
+            background: url(images/calcu/btn-punt.png) no-repeat center;
+        }
+        input#btn-equal{
+            background: url(images/calcu/btn-equal.png) no-repeat center;
+        }
+        .result-bar span{
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Challengue Calculator</h1>
+        </header>
+        <article>
+            <div class="calculator">
+                
+                <header class="display">
+                    <span id="Result"></span>
+                </header>
+                <div class="logo"></div>
+                <input class="operator-out" type="button"id="btn-clear">
+                <div class="controlls">
+                     
+                    <input class="number" type="button" id="btn-7">
+                    <input class="number" type="button" id="btn-8">
+                    <input class="number" type="button" id="btn-9">
+                    <input class="operator" type="button" id="btn-div">
+                    <input class="number" type="button"id="btn-4"> 
+                    <input class="number" type="button"id="btn-5">
+                    <input class="number" type="button"id="btn-6">
+                    <input class="operator" type="button" id="btn-multiplication">
+                    <input class="number" type="button" id="btn-1">
+                    <input class="number" type="button" id="btn-2">
+                    <input class="number" type="button" id="btn-3">
+                    <input class="operator" type="button"id="btn-rest">
+                    <input class="result" type="button" id="btn-equal">
+                    <input class="number" type="button" id="btn-0">
+                    <input class="number" type="button" id="btn-punt">
+                    <input class="operator" type="button"id="btn-sum">
+                </div>
+            </div>
+        </article>
+    </main>
+    <script>
+        function takeValue(x) {
+
+    console.log(x)
+	document.getElementById('Result').innerHTML += x;
+}
+
+
+function clearInput() {
+	document.getElementById('Result').innerHTML = "";
+}
+
+function calculateResult() {
+	var result = eval(document.getElementById('Result').innerHTML);
+	document.getElementById('Result').innerHTML = result;
+}
+
+
+var cero = document.getElementById('btn-0');
+var one = document.getElementById('btn-1');
+var two = document.getElementById('btn-2');
+var three = document.getElementById('btn-3');
+var four = document.getElementById('btn-4');
+var five = document.getElementById('btn-5');
+var six = document.getElementById('btn-6');
+var seven = document.getElementById('btn-7');
+var eight = document.getElementById('btn-8');
+var nine = document.getElementById('btn-9');
+
+var plus = document.getElementById('btn-sum');
+var minus = document.getElementById('btn-rest');
+var divide = document.getElementById('btn-div');
+var multiply = document.getElementById('btn-multiplication');
+var equal = document.getElementById('btn-equal');
+var deleteN = document.getElementById('btn-clear');
+
+
+
+
+
+one.addEventListener("click", function(){
+    takeValue(1);
+})
+two.addEventListener("click", function(){
+    takeValue(2);
+})
+three.addEventListener("click", function(){
+    takeValue(3);
+})
+four.addEventListener("click", function(){
+    takeValue(4);
+})
+five.addEventListener("click", function(){
+    takeValue(5);
+})
+six.addEventListener("click", function(){
+    takeValue(6);
+})
+seven.addEventListener("click", function(){
+    takeValue(7);
+})
+eight.addEventListener("click", function(){
+    takeValue(8);
+})
+nine.addEventListener("click", function(){
+    takeValue(9);
+})
+plus.addEventListener("click", function(){
+    takeValue("+");
+})
+minus.addEventListener("click", function(){
+    takeValue("-");
+})
+multiply.addEventListener("click", function(){
+    takeValue("*");
+})
+divide.addEventListener("click", function(){
+    takeValue("/");
+})
+
+
+equal.addEventListener("click", function(){
+    calculateResult();
+})
+
+deleteN.addEventListener("click", function(){
+    clearInput()
+})
+
+    </script>
+</body>
+</html>

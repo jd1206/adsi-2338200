@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selectors</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        p>span{
+            color: #5ae6a0;
+            background-color: yellow;
+            padding: 10px;
+        }
+        /*adjacent selector*/
+        h3+h3{
+            color: #bff5bf;
+            background-color: #eecb8b;
+            padding: 10px;
+        }
+        /*Attirbute selector*/
+        a[class]{
+            color: #f7f5f5;
+            background-color: rgb(253, 181, 181);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <a href="./">⬅</a> Advanced Selectors</h1>
+        </header>
+        <section>
+            <h2>Children:</h2>
+            <p>
+                <span>Text 1</span>
+            </p>
+            <p>
+                <div>
+                    <span>Text 2</span>
+                </div>
+            </p>
+            <h2>Adjacent:</h2>
+            <h3>Lorem Ipdum Dolor</h3>
+            <h3>Lorem Ipdum Dolor</h3>
+            <h2>Attribute:</h2>
+            <a href="http://www.google.com">Go to Google</a>&nbsp;|&nbsp;
+            <a href="http://www.google.com" class="active">Go to Google</a>&nbsp;|&nbsp;
+            <a href="http://www.google.com">Go to Google</a>&nbsp;|&nbsp;
+        </section>
+    </main>
+</body>
+</html>

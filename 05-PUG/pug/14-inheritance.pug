@@ -1,0 +1,22 @@
+doctype
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Include CSS & JS
+extends inc/layout.pug
+
+block title
+	title Inheritance PUG
+	style 
+		include css/mainpug.css
+block content
+body 
+	main
+		header 
+			nav 
+				h1 Include CSS & JS
+				a(href="./") 
+					button
+	h1 Inheritance PUG
+	p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, placeat.
+	

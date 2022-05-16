@@ -1,0 +1,18 @@
+doctype
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Variable Attribute
+		style 
+			include css/mainpug.css
+	body
+		main
+			header 
+				nav 
+					h1 Variable Attribute
+					a(href="./") 
+						button
+		- var classes = ['red', 'green', 'blue']
+		- var idu = "main01"
+		h1(id=idu, class=classes) Variable Attribute
+	

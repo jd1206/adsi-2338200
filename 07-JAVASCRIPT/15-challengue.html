@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challengue</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        *{
+            color: black;
+        }
+        .fondo{
+            background: url(images/challengue/fondo.svg) no-repeat;
+            width: 425px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            
+        }
+        input.name{
+            border-radius: 20px;
+            position: absolute;
+            width: 309px;
+            height: 30px;
+            background-color: #ECECEC;
+            top: 310px;
+            left: 60px;
+            border: 1px solid #000000;
+            outline: none;
+            text-indent: 10px;
+        }
+        input.contact{
+            border-radius: 20px;
+            position: absolute;
+            width: 309px;
+            height: 30px;
+            background-color: #ECECEC;
+            top: 400px;
+            left: 60px;
+            border: 1px solid #000000;
+            outline: none;
+            text-indent: 10px;
+        }
+        input.date{
+            border-radius: 20px;
+            position: absolute;
+            width: 309px;
+            height: 30px;
+            background-color: #ECECEC;
+            top: 500px;
+            left: 60px;
+            border: 1px solid #000000;
+            outline: none;
+            text-indent: 10px;
+            text-align: center;
+            padding: 2px;
+        }
+        .men{
+            background: url(images/challengue/hombre.svg) no-repeat;
+            width: 95px;
+            height: 95px;
+            position: absolute;
+            border:none;
+            top: 140px;
+            left: 55px;
+            cursor: pointer;
+            transition: transform .2s ease-in;
+            
+        }
+        button.men:hover{
+            transform: scale(1.1);
+        }
+        .woman{
+            background: url(images/challengue/mujer.svg) no-repeat;
+            width: 95px;
+            height: 95px;
+            position: absolute;
+            border:none;
+            top: 140px;
+            left: 280px;
+            cursor: pointer;
+            transition: transform .2s ease-in;
+        }
+        button.woman:hover{
+            transform: scale(1.1);
+        }
+        .checkHB{
+            background: url(images/challengue/validateB.svg) no-repeat;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            margin-left: 60px;
+            
+        }
+        .checkHG{
+            background: url(images/challengue/validateG.svg) no-repeat;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            margin-left: 60px;
+        }
+        .checkMG{
+            background: url(images/challengue/validateG.svg) no-repeat;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            margin-left: 60px;
+        }
+        .checkMB{
+            background: url(images/challengue/validateB.svg) no-repeat;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            margin-left: 60px;
+        }
+        .validate{
+            box-sizing: border-box;
+            position: absolute;
+            width: 90px;
+            height: 30px;
+            background: #9EFE9C;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            top: 554px;
+            text-align: center;
+            bottom: 0;
+            left: 170px;
+            cursor: pointer;
+            transition: transform .2s ease-in;
+ 
+        }
+        button.validate:hover{
+            transform: scale(1.1);
+        }
+        
+        main.menGo article{
+            background: url(images/challengue/menwar.svg) no-repeat center;
+            width: 425px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            
+            
+        }
+        main.menGo article button.one{
+            box-sizing: border-box;
+            position: absolute;
+            width: 90px;
+            height: 30px;
+            background: #FFA4A4;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            cursor: pointer;
+            top: 554px;
+            text-align: center;
+            bottom: 0;
+            left: 170px;
+            cursor: pointer;
+
+        }
+        
+        main.menNo article{
+            background: url(images/challengue/menNwar.svg);
+            width: 425px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+        }
+        main.menNo article button{
+            box-sizing: border-box;
+            position: absolute;
+            width: 90px;
+            height: 30px;
+            background: #FFA4A4;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            cursor: pointer;
+            top: 554px;
+            text-align: center;
+            bottom: 0;
+            left: 170px;
+            
+            cursor: pointer;
+
+        }
+        main.womanNo article{
+            background: url(images/challengue/womanNwar.svg);
+            width: 425px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+        }
+        main.womanNo article button.three{
+            box-sizing: border-box;
+            position: absolute;
+            width: 90px;
+            height: 30px;
+            background: #FFA4A4;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            cursor: pointer;
+            top: 554px;
+            text-align: center;
+            bottom: 0;
+            left: 170px;
+            
+            cursor: pointer;
+
+        }
+        .ocultar{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="menGo ocultar">
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Challengue</h1>
+        </header>
+        <article>
+            <button class="one">Back</button>
+            
+            </article>
+        
+    </main>
+    <main class="menNo ocultar">
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Challengue</h1>
+        </header>
+        <article>
+            <button>Back</button>
+        </article>
+        
+    </main>
+    <main class="womanNo ocultar">
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Challengue</h1>
+        </header>
+        <article>
+            <button class="three">Back</button>
+        </article>
+        
+    </main>
+    <main class="form">
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Challengue</h1>
+        </header>
+        <article class="fondo">
+            <header class="gender">
+                <button class="men">
+                    <section class="checkHG ocultar"></section>
+                    <section class="checkHB"></section>
+                </button>
+                <button class="woman">
+                    <section class="checkMG ocultar"></section>
+                    <section class="checkMB"></section>
+                </button>
+            </header>
+            <form class="information">
+                <input type="text" class="name">
+                <input type="text" class="contact">
+                <input type="date" class="date">
+            </form>
+            <footer>
+                    <button class="validate">Validate</button>
+            </footer>
+        </article>
+    </main>
+    <script>
+        // constantes
+        const main1 = document.querySelector('main.menGo')
+        const main2 = document.querySelector('main.menNo')
+        const main3 = document.querySelector('main.womanNo')
+        const man = document.querySelector('button.men')
+        const woman = document.querySelector('button.woman')
+        const form = document.querySelector('main.form')
+        const valid = document.querySelector('button.validate')
+        const backHGO = document.querySelector('button.one')
+        const backMNGO = document.querySelector('button.three')
+        const checkHB = document.querySelector('section.checkHB')
+        const checkHG = document.querySelector('section.checkHG')
+        const checkMB = document.querySelector('section.checkMB')
+        const checkMG = document.querySelector('section.checkMG')
+        // actions
+        
+        // valid.onclick = () =>{
+        //     form.classList.add('ocultar')
+        //     main1.classList.remove('ocultar')
+
+            
+        // }
+        // back.onclick = () =>{
+        //     main1.classList.add('ocultar')
+        //     form.classList.remove('ocultar')
+        // }
+        man.onclick = () =>{
+            // agregar
+            checkHB.classList.add('ocultar'),
+            checkHG.classList.remove('ocultar'),
+            checkMG.classList.add('ocultar'),
+            checkMB.classList.remove('ocultar')
+            // actions
+            valid.onclick = () =>{
+            form.classList.add('ocultar')
+            main1.classList.remove('ocultar')
+            }
+            backHGO.onclick = () =>{
+            main1.classList.add('ocultar')
+            form.classList.remove('ocultar')
+            }
+        }
+        woman.onclick = () =>{
+            // agregar
+            checkMB.classList.add('ocultar')
+            checkMG.classList.remove('ocultar')
+            checkHG.classList.add('ocultar')
+            checkHB.classList.remove('ocultar')
+            // actions
+            valid.onclick = () =>{
+            form.classList.add('ocultar')
+            main3.classList.remove('ocultar')
+            }
+            backMNGO.onclick = () =>{
+                main3.classList.add('ocultar')
+                form.classList.remove('ocultar')
+            }
+        }
+
+       
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        figure.garden{
+            overflow: hidden;
+            background: url(images/garden.jpg)no-repeat center/cover    ;
+            height: 400px;
+            width: 580px;
+            margin: 1rem auto;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        figure.garden div.dove{
+            
+            background:url(images/paloma3.gif)no-repeat center/cover   ;
+            height: 80px;
+            width:  80px;
+            position: absolute;
+            left: -100px;
+            animation: animDove 10s linear infinite;
+        }
+        @keyframes animDove{
+            /*from*/
+            0%{
+                left: 800px;
+                top: 0px;
+                transform: rotateY(0deg)scale(2);
+
+            }
+            50%{
+                left: 280px;
+                top: 300px;
+                transform: rotateY(0deg)scale(0.8);
+
+            }
+            51%{
+                left: 280px;
+                top: 300px;
+                transform: rotateY(180deg)scale(0.8);
+            }
+            70%{
+                left: 280px;
+                top: 300px;
+                transform: rotateY(0deg)scale(0.8);
+            }
+            /*to*/
+            100%{
+                left: -100px;
+                top: 200px;
+                transform: rotateY(0deg)scale(4);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">⬅️</a>Animations</h1>
+        </header>
+        <section>
+            <h2>Example</h2>
+            <figure class="garden">
+                <div class="dove"></div>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Element(s)</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        p{
+            padding-left: 20px;
+        }
+        button{
+            margin-top: 40px;
+            border: none;
+            padding: 10px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Get Element(s)</h1>
+        </header>
+        <section>
+            <h3 id="year"></h3>
+            <ul>
+                <li>Bulbasaur</li>
+                <li>Squirtle</li>
+                <li>Charmander</li>
+            </ul>
+            
+            <h3 id="nli"></h3>
+            <p class="paragraph">Lorem, ipsum dolor</p>
+            <p class="paragraph">Lorem, ipsum dolor</p>
+            <h3 id="np"></h3>
+            
+            <button class="btn first">Button 1</button>
+            <button class="btn">Button 2</button>
+            <button class="btn">Button 3</button>
+        </section>
+    </main>
+    <script>
+        // getElementById
+        let year  = document.getElementById('year')
+        let nli   = document.getElementById('nli')
+        let np = document.getElementById('np')
+        let ndate = new Date
+        year.innerText = 'Current Year: \n' + ndate.getFullYear()
+        // getElementsByTagName
+        let lis = document.getElementsByTagName('li')
+        nli.innerText = 'There are: ' + lis.length + 
+                        ' list elements \n' + 'Last element value is: ' +
+                        lis[lis.length-1].textContent
+        //getElementsByClassName
+        let nps = document.getElementsByClassName('paragraph')
+        nps[nps.length-1].style.color = 'crimson'
+        np.innerText= 'There are: '+nps.length +
+        '<p> with class paragraph'
+        //querySelectors(s)
+        let btn = document.querySelector('button.first')
+        let btns = document.querySelectorAll('button.btn')
+
+        btn.style.marginLeft = '120px'
+        btns[1].style.backgroundColor='crimson'
+    </script>
+</body>
+</html>

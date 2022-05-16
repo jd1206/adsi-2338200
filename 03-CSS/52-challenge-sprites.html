@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Sprite</title>
+    <style>
+        body{
+            background-color: #17a053;
+            border: 10px solid white;
+            margin: 0;
+            
+        }
+        main header div.logo{
+            background: url(images/spriteweb.png) no-repeat -20px -400px;
+
+            height: 180px;
+            width: 180px;
+            margin: 0px auto;
+
+        }
+        main{
+            width: 80%;
+            margin: 0 auto;
+            
+        }
+        main header div.menu ul{
+            list-style: none;
+            margin: 0 auto;
+            width: 80%;
+
+        }
+        
+        main header div.menu ul li {
+            background-color: #00000066;
+            border-bottom: 4px solid white;
+            color: white;
+            display: inline-block;
+            font-family: Verdana;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            transition: 0.5s background-color ease-in,
+                        0.5s border-bottom ease-out;
+            text-align: center;
+            width: 200px;
+            border: 4px soli white;
+            margin-top: 5px;
+            
+            
+            
+        }
+        main header div.menu ul li:hover{
+            cursor: pointer;
+            border-bottom: 4px solid #fad000;
+            background-color: #000000cc;
+            
+        }
+        @media(max-width:780px){
+            main header div.menu ul li{
+                display: block;
+                width: 88%;
+            }
+
+        }
+        
+        main section.gallery{
+            background-color: #00000066;
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 49%;
+            
+            
+        }
+        main section.gallery div{
+            display: inline-block;
+            margin-top: 0px auto;
+            
+        }
+        main section.gallery div h3{
+            background-color: #ffffff88;
+            margin: 0px;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        main section.gallery div.gallery01{
+            background: url(images/spriteweb.png) no-repeat -520px -15px;
+            margin: 10px;
+            height: 190px;
+            width: 245px;
+            text-align: center;
+            border: 2px solid white;
+            
+        }
+        main section.gallery div.gallery01 h3:hover{
+            cursor: pointer;
+            background-color: #00000033;
+            transition: 0.5s;
+        }
+        main section.gallery div.gallery02{
+            background: url(images/spriteweb.png) no-repeat -520px -15px;
+            margin: 10px;
+            height: 190px;
+            width: 245px;
+            text-align: center;
+            border: 2px solid white;
+            
+        }
+        main section.gallery div.gallery02 h3:hover{
+            cursor: pointer;
+            background-color: #00000033;
+            transition: 0.5s;
+        }
+        main section.gallery div.gallery03{
+            background: url(images/spriteweb.png) no-repeat -520px -15px;
+            margin: 10px;
+            height: 190px;
+            width: 245px;
+            text-align: center;
+            border: 2px solid white;
+            
+        }
+        main section.gallery div.gallery03 h3:hover{
+            cursor: pointer;
+            background-color: #00000033;
+            transition: 0.5s;
+        }
+        main section.content{
+            background-color: #00000066;
+            margin: 40px auto;
+            padding: 20px;
+            width: 868px;
+            
+            
+        }
+        main section.content article{
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            
+            
+        }
+        main section.content article:hover{
+            transform: scale(1.02);
+            cursor: pointer;
+            color: green;
+            transition: 0.5s;
+        }
+        main section.content article:last-child{
+            background-color: white;
+            margin-bottom: 0;
+        }
+        main section.content article div{
+            
+            display: inline-block;
+            vertical-align: top;
+         
+        }
+        main section.content article div.image1{
+            background: url(images/spriteweb.png) no-repeat -240px -489px;
+            transition: all 0.8s ease-in;
+            margin-top: 24px;
+
+            
+        }
+        main section.content article div.image2{
+            background: url(images/spriteweb.png) no-repeat -10px -210px;
+        }
+        main section.content article div.image1,
+        main section.content article div.image2{
+            width: 200px;
+            height: 160px;
+        }
+        main section.content article:hover div.image1{
+            transform: rotateY(360deg);
+            transition: 2s;
+        }
+       
+        
+        main section.content article div.text{
+            width: 380px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: justify;
+            line-height: 1.5rem;
+        
+        }
+        main section.content article div.text:hover{
+            color: #17a053;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        main footer.pie{
+            background-color: white;
+            margin: 0 auto;
+            
+            
+        }
+        main footer.pie article{
+            border: 2px solid red;
+        }
+        main footer.pie ul li{
+            color: black;
+            display: inline-block;
+            font-family: Verdana;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            text-align: center;
+            width: 275px;
+            margin-top: 5px;
+            border: 4px solid white;
+        }
+        main footer.pie ul li:hover{
+            cursor: pointer;
+            border-bottom: 4px solid black;
+            transition: all 0.3s ease-in;
+            transform: translateY(-10px);
+        }
+        main footer.pie div.image{
+            background: url(images/spriteweb.png) no-repeat -500px -420px;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            border-top: 60px solid white;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo"></div>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Porfolio</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+                
+                
+            </div>
+        </header>
+        <section class="gallery">
+            <div class="gallery01">
+                <h3>Sprite 01</h3>
+            </div>
+            <div class="gallery02">
+                <h3>Sprite 02</h3>
+            </div>
+            <div class="gallery03">
+                <h3>Sprite 03</h3>
+            </div>
+        </section>
+        <section class="content">
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, harum. Quisquam minus tempore dolores, a nihil dignissimos. Hic corrupti cum repellat in culpa sunt mollitia alias libero voluptas nostrum? Enim.
+                </div>
+                <div class="image2"></div>
+            </article>
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, harum. Quisquam minus tempore dolores, a nihil dignissimos. Hic corrupti cum repellat in culpa sunt mollitia alias libero voluptas nostrum? Enim.
+                </div>
+                <div class="image2"></div>
+            </article>
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, harum. Quisquam minus tempore dolores, a nihil dignissimos. Hic corrupti cum repellat in culpa sunt mollitia alias libero voluptas nostrum? Enim.
+                </div>
+                <div class="image2"></div>
+            </article>
+        </section>
+        <footer class="pie">
+                <div class="image">
+                    
+                </div>
+                <div class="menu"></div>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Porfolio</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+        </footer>
+    </main>
+</body>
+</html>

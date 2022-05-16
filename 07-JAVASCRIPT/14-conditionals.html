@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        input,button{
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        button{
+            width: 220px;
+            background-color: #aa0;
+            font-family: Poppins;
+            font-size: .8rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        hr{
+            border: 1px solid #aa0;
+            margin-top: 20px;
+        }
+        h5{
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+            border: 1px dashed white;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: #aa0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>Conditionals</h1>
+        </header>
+        <section>
+            <h4>How much is: 4*5/2?</h4>
+            <input type="number" class="answer" >
+            <button>Validate</button>
+            <hr>
+            <h5 id="today"></h5>
+            <!-- <h3> Today is: Monday 😥</h3> -->
+        </section>
+    </main>
+    <script>
+        //
+        const answer = document.querySelector('input')
+        const button = document.querySelector('button')
+
+        button.onclick = () =>{
+            let val = answer.value
+            if (val != ''){
+                if(parseInt(val)===10){
+                    alert('Congratulations! Its Correct')
+                } else{
+                    alert('Sorry: Its incorrect!')
+                }
+                
+            } else{
+                alert('Please, enter a number')
+            }
+        }
+        //
+        const today = document.getElementById('today')
+        var todayD = new Date
+        switch(todayD.getDay()){
+            case 1:
+                today.innerText = 'Today is Monday 😥'
+                break;
+            case 2:
+                today.innerText = 'Today is Tuesday '
+                break;
+            case 3:
+
+                today.innerText = 'Today is Wednesday '
+                break;
+            case 4:
+
+                today.innerText = 'Today is Thursday'
+                break;
+            case 5:
+
+                today.innerText = 'Today is Friday'
+                break;
+            default:
+                today.innerText = 'Today is Weekend'
+                break;
+        }
+        
+
+    </script>
+</body>
+</html>

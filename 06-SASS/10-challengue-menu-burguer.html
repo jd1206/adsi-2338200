@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challengue menu burger</title>
+    <link rel="stylesheet" href="css/10-challengue-menu-burger.css">
+    <style>
+      body{
+        background-color: aliceblue;
+      }
+      main{
+            width: 60%;
+            margin: 0 auto;
+            
+        }
+      li{
+        background-color: #9da6ff;
+            border-bottom: 4px solid white;
+            color: white;
+            display: inline-block;
+            font-family: Verdana;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            transition: 0.5s background-color ease-in,
+                        0.5s border-bottom ease-out;
+            text-align: center;
+            width: 200px;
+            border: 4px soli white;
+            margin-top: 5px;
+      }
+      @media (max-width: 780px){
+        .botonMenu
+
+{
+
+   margin: 0 auto;
+
+   display: block;
+
+   width: 40px;
+
+   height: 36px;
+
+   padding: 10px;
+
+   border-radius: 7px;
+
+   background: #666;
+
+   color: white;
+
+   cursor: pointer;
+
+   position: relative;
+
+}
+
+.botonMenu span
+
+{
+
+   display: block;
+
+   width: 40px;
+
+   height: 4px;
+
+   background: white;
+
+   margin-top: 7px;
+
+}
+
+label
+
+{
+
+   cursor: pointer;
+
+}
+
+#menu-toggle
+
+{
+
+   display: none;
+
+}
+
+#trickMenu
+
+{
+
+   display: none;
+
+   text-align: center;
+
+   background: white;
+
+   padding: 10px 0;
+
+}
+
+#trickMenu li a
+
+{
+
+   display: block;
+
+   padding: 10px 0;
+
+   color: black;
+
+}
+
+#menu-toggle:checked + #trickMenu
+
+{
+
+   display: block;
+
+}
+      }
+    </style>
+</head>
+<body>
+  <main>
+    <header>
+      <nav class="menuHTML">
+        <label for="menu-toggle">
+           <div class="botonMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+           </div>
+        </label>
+        <input type="checkbox" id="menu-toggle" />
+        <ul id="trickMenu">
+           <li><a href="#"> Contact </a></li>
+           <li><a href="#"> Services</a></li>
+           <li><a href="#"> Blog </a></li>
+           <li><a href="#"> Home </a></li>
+        </ul>
+      </nav>
+    </header>
+  </main>
+</body>
+</html>

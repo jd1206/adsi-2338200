@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Object</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+
+        main{
+            background:url(images/light.SVG/light.svg) no-repeat;
+            border: none;
+            border: 2px solid #aa0;
+            width: 420px;
+            transition: all 1s ease-in;
+            height: 700px;
+
+            
+            
+        }
+        main.darkmode{
+            background: url(images/dark.svg/modooscuro.svg) no-repeat;
+        }
+        header a:link,
+        header a:visited{
+            color: #f7db72;
+            top: 40px;
+            left: 20px;
+        }
+        section{
+            position: relative;
+            width: 65px;
+            height: 65px;
+            left: 349px;
+            top: 24px;
+        }
+        /*Dark mode Parallax*/
+        main.darkmode section button.btnDarkMode{
+            background: url(images/dark.svg/darmode1.svg) no-repeat center;
+            transition: all 1s ease-in;
+        }
+        main.darkmode section figure.landscape div.sky{
+            background: url(images/dark.svg/noche.png) repeat-x;
+            position: absolute;
+            width: 345px;
+            height: 180px;
+            top: 2px;
+            transition: all 1s ease-in;
+
+        }
+        main.darkmode section figure.landscape div.edi1{
+            background: url(images/dark.svg/edi1.png) repeat-x;
+            position: absolute;
+            top: 100px;
+            width: 345px;
+            height: 110px;
+            transition: all 1s ease-in;
+        }
+        section button.btnDarkMode{
+            background: url(images/light.SVG/darkmode.svg) no-repeat center;
+            position: absolute;
+            width: 68px;
+            height: 69px;
+            bottom: 0px;
+            right: 0px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            
+            
+        }
+        section button.btndarkMode:hover{
+            transform: scale(1.1) rotate(45deg);
+        }
+        section div{
+            color: black;
+            
+        }
+        main.darkmode section div{
+            color: white;
+            transition: transform 0.2s ease;
+        }
+        section div.brand{
+            position: absolute;
+            margin-top: 115px;
+            right: 260px;
+        }
+        section div.refer{
+            position: absolute;
+            margin-top: 115px;
+            right: 60px;
+        }
+        section div.model{
+            position: absolute;
+            margin-top: 200px;
+            right: 260px;
+        }
+        section div.color{
+            position: absolute;
+            margin-top: 200px;
+            right: 60px;
+        }
+        figure.landscape{
+            position: absolute;
+            width: 345px;
+            height: 250px;
+            left: -353px;
+            top: 260px;
+            
+        }
+        figure.landscape div{
+            width: 345px;
+            height: 250px;
+            bottom: 28px;
+            position: absolute;
+        }
+        
+        img.image{
+            
+            background-size: contain;
+            position: absolute;
+            width: 110px;
+            height: 40px;
+            top: 200px;
+            left: 20px;
+            z-index: 5;
+            
+            
+        }
+        /*Animation Start*/
+        
+        section img.start{
+            animation: animStart 0.25s ease infinite;
+        }
+        @keyframes animStart {
+            0%{top: 200px;}
+            100%{top: 199px;}
+        }
+        figure.landscape div.sky{
+            background: url(images/fondo/cielo1.png) repeat-x;
+            position: absolute;
+            width: 345px;
+            height: 180px;
+            top: 2px;
+            transition: all 1s ease-in;
+            
+    
+        }
+        
+        
+        figure.landscape div.edi1{
+        background: url(images/fondo/edi1.png) repeat-x;
+        position: absolute;
+        top: 100px;
+        width: 345px;
+        height: 120px;
+        transition: all 1s ease-in;
+        
+        
+       
+    
+        }
+        figure.landscape div.street{
+        background: url(images/fondo/callep.png) repeat-x;
+        position: absolute;
+        width: 345px;
+        height: 40px;
+        top: 210px;
+        z-index: 2;
+        transition: all 1s ease-in;
+        /* move parallax */
+    
+        }
+        figure.landscape.move div.sky{
+            animation: moveRight 6s linear infinite;
+            
+        }
+        figure.landscape.move div.edi1{
+            animation: moveRight 5s linear infinite;
+            
+        }
+        figure.landscape.move div.street{
+            animation: moveRight 4s linear infinite;
+            
+        }
+        /* Stop */
+        figure.landscape.stop div.sky,
+        figure.landscape.stop div.edi1,
+        figure.landscape.stop div.street{
+            animation-play-state: paused;
+        }
+        /* Reverse */
+        figure.landscape.reverse div.sky,
+        figure.landscape.reverse div.edi1,
+        figure.landscape.reverse div.street{
+            animation-direction:reverse ;
+        }
+        @keyframes moveRight {
+            0%{background-position: 0;}
+            100%{background-position: -690.9px}
+        }
+        
+         nav.changeVehicle{
+            position: absolute;
+            top: 360px;
+            display: flex;
+            flex-direction: row;
+            width: 370px;
+            height: 100px;
+            align-items: flex-start;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+            right: -8px;
+            
+            padding: 20px;
+
+            
+        }
+        main section nav.changeVehicle button{
+            border: none;
+            height: 68px;
+            text-indent: -9999px;
+            width: 40px;
+            cursor: pointer; 
+            
+        }
+        button.prev{
+            background: url(images/dark.svg/adelante3.svg) no-repeat;
+        }
+        button.next{
+            background: url(images/dark.svg/adelante2.svg) no-repeat;
+        }
+        button.prev{
+            background: url(images/light.SVG/adelante3.1.svg) no-repeat;
+        }
+        button.next{
+            background: url(images/light.SVG/adelante2.1.svg) no-repeat;
+        }
+        button.prev:hover{
+            transform: translateX(-2px);
+        }
+        button.next:hover{
+            transform: translateX(2px);
+        }
+        nav.controls{
+            width: 399px;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            top: 550px;
+            left: -362px;
+            height: 100px;
+            padding: 20px;
+        }
+        nav.controls button{
+            height: 68px;
+            width: 68px;
+            text-indent: -9999px;
+            border: none;
+            transition: transform 0.2s ease;
+            
+        }
+        nav.controls button.btnStart{
+            background: url(images/light.SVG/play.svg) no-repeat center;
+            cursor: pointer;
+        }
+        nav.controls button.btnForward{
+            background: url(images/light.SVG/adelantebot.svg) no-repeat center;
+            cursor: pointer;
+        }
+        nav.controls button.btnStop{
+            background: url(images/light.SVG/pausa.svg) no-repeat center;
+            cursor: pointer;
+        }
+        nav.controls button.btnBackward{
+            background: url(images/light.SVG/atrasbot.svg) no-repeat center;
+            cursor: pointer;
+        }
+        nav.controls button.btnTurnOff{
+            background: url(images/light.SVG/parar.svg) no-repeat center;
+            cursor: pointer;
+        }
+        nav.controls button:hover{
+            transform: scale(1.25);
+        }
+        /* @media(max-width:1024px){
+            body{
+                width: 800px;
+            }
+
+        }
+        @media(max-width:800px){
+            body{
+                width:420px;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </header>
+        <section>
+            <button class="btnDarkMode"></button>
+            <div class="brand"></div>
+            <div class="refer"></div>
+            <div class="model"></div>
+            <div class="color"></div>
+            
+            <figure class="landscape">
+                <img src="" class="image">
+                <div class="sky"></div>
+                <div class="sun"></div>
+                <div class="edi1"></div>
+                <div class="street"></div>
+            </figure>
+            <nav class="changeVehicle">
+                <button class="prev">Prev</button>
+                <button class="next">Next</button>
+                
+            </nav>
+            <nav class="controls">
+                <button class="btnStart">Start</button>
+                <button class="btnForward">Forward</button>
+                <button class="btnStop">Stop</button>
+                <button class="btnBackward">Backward</button>
+                <button class="btnTurnOff">TurnOff</button>
+            </nav>
+        
+        </section>
+    </main>
+    <script>
+        //variables
+        var cindex=0
+        //booleans
+        var engine = false
+        var move = false
+        //elements
+        const main = document.querySelector('main')
+        const lands = document.querySelector('figure.landscape')
+        //--Buttons
+        const btnDarkMode = document.querySelector('button.btnDarkMode')
+        const btnNext = document.querySelector('button.next')
+        const btnPrev = document.querySelector('button.prev')
+        const btnStart = document.querySelector('button.btnStart')
+        const btnForward = document.querySelector('button.btnForward')
+        const btnStop = document.querySelector('button.btnStop')
+        const btnBackward = document.querySelector('button.btnBackward')
+        const btnTurnOff = document.querySelector('button.btnTurnOff')
+        
+        //Attributes
+        const brand = document.querySelector('div.brand')
+        const refer = document.querySelector('div.refer')
+        const model = document.querySelector('div.model')
+        const color = document.querySelector('div.color')
+        const image=document.querySelector('img.image')
+        //--object
+        const vehicle={
+            //attributes
+            attributes:[
+                {brand:'Toyota',    refer:'Yaris',  model:'2020', color:'Red', image:'images/fondo/carro4.png'},
+                {brand:'Renault',   refer:'Clio',   model:'2019', color:'Blue', image:'images/fondo/carro3.png'},
+                {brand:'Chevrolet', refer:'Onix',   model:'2020', color:'Green',  image:'images/fondo/carro2.png'},
+                {brand:'Ford',      refer:'Fiesta', model:'2020', color:'Orange',   image:'images/fondo/carro1.png'}
+            ],
+            //Methods
+            ShowAttributes:function(index){
+                brand.innerText = this.attributes[index].brand
+                refer.innerText = this.attributes[index].refer
+                model.innerText = this.attributes[index].model
+                color.innerText = this.attributes[index].color
+                image.setAttribute('src',this.attributes[index].image)
+            },
+            darkMode:function(){
+                main.classList.toggle('darkmode')
+                
+            },
+            start:function(){
+                
+                if(!engine){
+                    
+                    image.classList.add('start')
+                    engine = true
+                }
+            },
+            forWard:function(){
+                if(engine && !move){
+                    lands.classList.remove('stop')
+                    lands.classList.remove('reverse')
+                    lands.classList.add('move')
+                    move = true
+                }
+                
+            },
+            stop:function(){
+                if(engine && move){
+                    
+                    lands.classList.add('stop')
+                    move = false
+                }
+            },
+            backward:function(){
+                if(engine && !move){
+                    lands.classList.add('move')
+                    lands.classList.remove('stop')
+                    lands.classList.add('reverse')
+                    move = true
+                }
+                
+            },
+            turnOff:function(){
+                if(engine && !move){
+                    
+                    image.classList.remove('start')
+                    engine = false
+                }
+                
+            }
+        }
+        //---
+        vehicle.ShowAttributes(0)
+        //actions, dar click al bton
+        
+        btnDarkMode.onclick = () =>{
+            vehicle.darkMode()
+        }
+        // Botones de andar
+        btnStart.onclick = () =>{
+            vehicle.start()
+        }
+        btnForward.onclick = () =>{
+            vehicle.forWard()
+        }
+        btnStop.onclick = () =>{
+            vehicle.stop()
+        }
+        btnBackward.onclick = () =>{
+            vehicle.backward()
+        }
+        btnTurnOff.onclick = () =>{
+            vehicle.turnOff()
+        }
+        // Cambiar Carros
+        btnPrev.onclick = () =>{
+            if(cindex>0){
+                cindex--
+                vehicle.ShowAttributes(cindex)
+            }
+        }
+        btnNext.onclick = () =>{
+            if(cindex<(vehicle.attributes.length-1)){
+                cindex++
+                vehicle.ShowAttributes(cindex)
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

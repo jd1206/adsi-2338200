@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>  Main    Pug</title>
+    <style>
+       html {
+    color: black;
+    font-size: 16px;
+    font-family: Arial;
+    
+    background-color: white;
+}
+body {
+    background-color: #efcda490;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+}
+main {
+    border-radius: 6px;
+    padding: 20px;
+}
+main section{
+    background: url(../images/logo.png)no-repeat center;
+    background-size: cover;
+    margin-top:-20px ;
+}
+main header h1 {
+    background-color: #5e5c5f;
+    border-radius: 6px;
+    color: white;
+    padding: 20px;
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+}
+main nav.menu ul {
+    list-style: none;
+    margin: 40px auto;
+    width: 320px;
+    padding: 10px;
+}
+main nav.menu ul li{
+    margin: 10px;
+}
+main nav.menu ul li a:link,
+main nav.menu ul li a:visited {
+    background-color: #55302798;
+    border-radius: 6px;
+    color: black;
+    display: block;
+    margin: 4px 0px;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+}
+main nav.menu ul li a span{
+    border-radius: 6px 6px 6px 6px;
+    display:block;
+    background-color: rgb(196, 196, 196);
+    padding: 20px;
+    color: #3c3c3c;
+}
+main nav.menu ul li a{
+    border-radius: 2px 2px 2px 2px;
+    display: inline-block;
+    background-color: white;
+}
+main nav.menu ul li a:hover {
+    background-color: #00000030;
+    color: #ffffff;
+    transform: scale(1.04);
+}
+main header h1 a:link,
+main header h1 a:visited {
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    transition: all 0.2s ease-in;
+    
+}
+main header h1 a:hover {
+    transform: translateX(-10px);
+}
+article{
+    background: white;
+    overflow: auto;
+}
+header nav a{
+    position: absolute;
+    color: white;
+    display: inline-block;
+    font-size: 2rem;
+    bottom: 460px;
+    margin-left: 10px;
+    
+}
+button{
+    background: url(../../01-emmet/images/devolver.svg) no-repeat;
+    width: 73px;
+    height: 73px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    
+}
+button.home{
+    background: url(../../../imagesF/home.png) no-repeat;
+    width: 73px;
+    height: 73px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    
+}
+button:hover{
+    transform: scale(1.2);
+}
+article *{
+    padding: 20px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav>
+          <h1> Main    Pug</h1><a href="../../index.html">
+            <button class="home"> </button></a>
+        </nav>
+      </header>
+      <section>
+        <nav class="menu">
+          <ul>
+            <li><a href="01-document.html">01<span>Document</span></a></li>
+            <li><a href="02-attributes.html">02<span>Attributes</span></a></li>
+            <li><a href="03-style-attr.html">03<span>Style Attr</span></a></li>
+            <li><a href="04-variables-attr.html">04<span>Variables Attr</span></a></li>
+            <li><a href="05-literal-attr.html">   05<span>Literal Attr</span></a></li>
+            <li><a href="06-css.html">    06<span>CSS</span></a></li>
+            <li><a href="07-javascript.html">07 <span>Javascript</span></a></li>
+            <li><a href="08-cases.html">08<span>Cases</span></a></li>
+            <li><a href="09-for-loop.html">  09<span>For loop</span></a></li>
+            <li><a href="10-comments.html">   10<span>Comments</span></a></li>
+            <li><a href="11-conditionals.html">   11<span>Conditionals</span></a></li>
+            <li><a href="12-include.html">    12<span>Include</span></a></li>
+            <li><a href="13-include-text.html">   13<span>Include text</span></a></li>
+            <li><a href="14-inheritance.html">    14<span>Inheritance</span></a></li>
+            <li><a href="15-iterations.html">15<span>Iterations</span></a></li>
+            <li><a href="16-mixin.html">  16<span>Mixin</span></a></li>
+            <li><a href="17-challengue.html"> 17<span>Challengue</span></a></li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>

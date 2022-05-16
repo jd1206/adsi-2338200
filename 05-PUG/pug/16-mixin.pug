@@ -1,0 +1,23 @@
+doctype
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Mixin
+		style 
+			include css/mainpug.css
+	body
+		main
+			header 
+				nav 
+					h1 Iterations
+					a(href="./") 
+						button
+		h1 Mixin
+		mixin pet(name)
+			li.pet= name
+		ul
+			+pet('Firulais')
+			+pet('Misifu')
+			+pet('Pinky')
+			+pet('Hawk')
+	
