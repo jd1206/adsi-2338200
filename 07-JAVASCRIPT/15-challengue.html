@@ -43,7 +43,7 @@
             outline: none;
             text-indent: 10px;
         }
-        input.date{
+        input#fechaNacimiento{
             border-radius: 20px;
             position: absolute;
             width: 309px;
@@ -208,13 +208,41 @@
             text-align: center;
             bottom: 0;
             left: 170px;
-            
             cursor: pointer;
 
         }
+        /* main.menNo,main.womanNo{
+            display: none;
+        } */
+        h1#edadmenGo{
+            border: 2px solid red;
+            margin: 10px;
+            width: 250px;
+            border-radius: 20px;
+            background-color: #ECECEC;
+            border: 1px solid #000000;
+            text-indent: 5px;
+            cursor: pointer;
+        }
+        
         .ocultar{
             display: none;
         }
+        /* section.information{
+            display: inline-block;
+            margin-left: 80px;
+            margin-top: 190px;
+        }
+        section.information div{
+            border: 2px solid red;
+            margin: 10px;
+            width: 250px;
+            border-radius: 20px;
+            background-color: #ECECEC;
+            border: 1px solid #000000;
+            text-indent: 5px;
+            cursor: pointer;
+        } */
     </style>
 </head>
 <body>
@@ -228,9 +256,15 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <button class="one">Back</button>
+            <section>
+                <h1 id="edadmenGo"></h1>
+            </section>
             
-            </article>
+            <footer>
+                <button class="one">Back</button>
+            </footer>
+            
+        </article>
         
     </main>
     <main class="menNo ocultar">
@@ -243,7 +277,8 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <button>Back</button>
+            <button class="two">Back</button>
+            
         </article>
         
     </main>
@@ -257,7 +292,15 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <button class="three">Back</button>
+            <section>
+                <h1 id="edadwomanNo">Tu</h1>
+            </section>
+            
+            <footer>
+                <button class="three">Back</button>
+            </footer>
+            
+            
         </article>
         
     </main>
@@ -284,7 +327,7 @@
             <form class="information">
                 <input type="text" class="name">
                 <input type="text" class="contact">
-                <input type="date" class="date">
+                <input type="date" id="fechaNacimiento">
             </form>
             <footer>
                     <button class="validate">Validate</button>
@@ -292,7 +335,11 @@
         </article>
     </main>
     <script>
-        // constantes
+        // constantes de fecha
+        const fechaNacimiento = document.getElementById("fechaNacimiento");
+        const edadmenGo = document.getElementById("edadmenGo");
+        const edadwomanNo = document.getElementById("edadwomanNo");
+        // Constantes
         const main1 = document.querySelector('main.menGo')
         const main2 = document.querySelector('main.menNo')
         const main3 = document.querySelector('main.womanNo')
@@ -306,18 +353,68 @@
         const checkHG = document.querySelector('section.checkHG')
         const checkMB = document.querySelector('section.checkMB')
         const checkMG = document.querySelector('section.checkMG')
-        // actions
-        
-        // valid.onclick = () =>{
-        //     form.classList.add('ocultar')
-        //     main1.classList.remove('ocultar')
+        const calcularEdad = (fechaNacimiento) => {
+                const fechaActual = new Date();
+                const anoActual = parseInt(fechaActual.getFullYear());
+                const mesActual = parseInt(fechaActual.getMonth()) + 1;
+                const diaActual = parseInt(fechaActual.getDate());
+                
+                // 2016-07-11
+                const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
+                const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
+                const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
+                
+                let edadmenGo = anoActual - anoNacimiento;
+                if (mesActual < mesNacimiento) {
+                    edadmenGo--;
+                } else if (mesActual === mesNacimiento) {
+                    if (diaActual < diaNacimiento) {
+                        edadmenGo--;
+                    }
+                }
+                return edadmenGo;
+            };
+            window.addEventListener('load', function () {
 
-            
-        // }
-        // back.onclick = () =>{
-        //     main1.classList.add('ocultar')
-        //     form.classList.remove('ocultar')
-        // }
+                fechaNacimiento.addEventListener('change', function () {
+                    if (this.value) {
+                        edadmenGo.innerText = `La edad es: ${calcularEdad(this.value)} años`;
+                    }
+                });
+
+            });
+            // woman
+            const calcularEdadWN = (fechaNacimiento) => {
+                const fechaActual = new Date();
+                const anoActual = parseInt(fechaActual.getFullYear());
+                const mesActual = parseInt(fechaActual.getMonth()) + 1;
+                const diaActual = parseInt(fechaActual.getDate());
+                
+                // 2016-07-11
+                const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
+                const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
+                const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
+                
+                let edadwomanNo = anoActual - anoNacimiento;
+                if (mesActual < mesNacimiento) {
+                    edadwomanNo--;
+                } else if (mesActual === mesNacimiento) {
+                    if (diaActual < diaNacimiento) {
+                        edadwomanNo--;
+                    }
+                }
+                return edadwomanNo;
+            };
+            window.addEventListener('load', function () {
+
+                fechaNacimiento.addEventListener('change', function () {
+                    if (this.value) {
+                        edadwomanNo.innerText = `La edad es: ${calcularEdadWN(this.value)} años`;
+                    }
+                });
+
+            });
+        // actions
         man.onclick = () =>{
             // agregar
             checkHB.classList.add('ocultar'),
@@ -333,6 +430,8 @@
             main1.classList.add('ocultar')
             form.classList.remove('ocultar')
             }
+            
+            
         }
         woman.onclick = () =>{
             // agregar
@@ -350,8 +449,6 @@
                 form.classList.remove('ocultar')
             }
         }
-
-       
         
     </script>
 </body>
