@@ -86,14 +86,7 @@
         button.woman:hover{
             transform: scale(1.1);
         }
-        .checkHB{
-            background: url(images/challengue/validateB.svg) no-repeat;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            margin-left: 60px;
-            
-        }
+       
         .checkHG{
             background: url(images/challengue/validateG.svg) no-repeat;
             width: 20px;
@@ -108,13 +101,7 @@
             position: absolute;
             margin-left: 60px;
         }
-        .checkMB{
-            background: url(images/challengue/validateB.svg) no-repeat;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            margin-left: 60px;
-        }
+        
         .validate{
             box-sizing: border-box;
             position: absolute;
@@ -211,38 +198,39 @@
             cursor: pointer;
 
         }
-        /* main.menNo,main.womanNo{
+        /* main.menNo,main.womanNo,main.form{
             display: none;
         } */
-        h1#edadmenGo{
-            border: 2px solid red;
-            margin: 10px;
-            width: 250px;
-            border-radius: 20px;
-            background-color: #ECECEC;
-            border: 1px solid #000000;
+        h1#edadmenGo,h1#edadmenNo,h1#edadwomanNo{
+            
+            width: 150px;
+            margin-left: 136px;
+            margin-top:250px;
             text-indent: 5px;
-            cursor: pointer;
+            border-radius: 10px;
+            border: 2px solid black;
+            background: rgb(207, 207, 207);
+     
+            position: absolute;
+            font-size: 13px;
+        }
+        h1#nameGO,h1#nameNo,h1#nameW{
+            
+            width: 150px;
+            margin-left: 136px;
+            margin-top:200px;
+            text-indent: 5px;
+
+            border-radius: 10px;
+            border: 2px solid black;
+            background: rgb(207, 207, 207);
+            position: absolute;
+            font-size: 13px;
         }
         
         .ocultar{
             display: none;
         }
-        /* section.information{
-            display: inline-block;
-            margin-left: 80px;
-            margin-top: 190px;
-        }
-        section.information div{
-            border: 2px solid red;
-            margin: 10px;
-            width: 250px;
-            border-radius: 20px;
-            background-color: #ECECEC;
-            border: 1px solid #000000;
-            text-indent: 5px;
-            cursor: pointer;
-        } */
     </style>
 </head>
 <body>
@@ -257,7 +245,8 @@
         </header>
         <article>
             <section>
-                <h1 id="edadmenGo"></h1>
+                <h1 id="edadmenGo">edad</h1>
+                <h1 id="nameGO">nombre</h1>
             </section>
             
             <footer>
@@ -277,7 +266,14 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <button class="two">Back</button>
+            <section>
+                <h1 id="edadmenNo"></h1>
+                <h1 id="nameNo"></h1>
+            </section>
+            <footer>
+                <button class="two">Back</button>
+            </footer>
+           
             
         </article>
         
@@ -294,6 +290,7 @@
         <article>
             <section>
                 <h1 id="edadwomanNo">Tu</h1>
+                <h1 id="nameW"></h1>
             </section>
             
             <footer>
@@ -317,16 +314,16 @@
             <header class="gender">
                 <button class="men">
                     <section class="checkHG ocultar"></section>
-                    <section class="checkHB"></section>
+                    
                 </button>
                 <button class="woman">
                     <section class="checkMG ocultar"></section>
-                    <section class="checkMB"></section>
+                    
                 </button>
             </header>
             <form class="information">
                 <input type="text" class="name">
-                <input type="text" class="contact">
+                <input type="text" class="contact" >
                 <input type="date" id="fechaNacimiento">
             </form>
             <footer>
@@ -336,9 +333,21 @@
     </main>
     <script>
         // constantes de fecha
+        var edadfinal=0
+        var nombreFinal=0
         const fechaNacimiento = document.getElementById("fechaNacimiento");
         const edadmenGo = document.getElementById("edadmenGo");
         const edadwomanNo = document.getElementById("edadwomanNo");
+        const edadmenNo = document.getElementById("edadmenNo");
+        //nombre
+        const nombre = document.querySelector('input.name')
+        var nameF = ''
+        const h1 = document.getElementById('nameGO')
+        const h2 = document.getElementById('nameNo')
+        const h3 = document.getElementById('nameW')
+       
+        
+        
         // Constantes
         const main1 = document.querySelector('main.menGo')
         const main2 = document.querySelector('main.menNo')
@@ -349,10 +358,11 @@
         const valid = document.querySelector('button.validate')
         const backHGO = document.querySelector('button.one')
         const backMNGO = document.querySelector('button.three')
-        const checkHB = document.querySelector('section.checkHB')
+        const backHNO = document.querySelector('button.two')
+        
         const checkHG = document.querySelector('section.checkHG')
-        const checkMB = document.querySelector('section.checkMB')
         const checkMG = document.querySelector('section.checkMG')
+        
         const calcularEdad = (fechaNacimiento) => {
                 const fechaActual = new Date();
                 const anoActual = parseInt(fechaActual.getFullYear());
@@ -371,44 +381,18 @@
                         edadmenGo--;
                     }
                 }
+                edadfinal=edadmenGo
                 return edadmenGo;
+                console.log(edadmenGo)
             };
             window.addEventListener('load', function () {
 
                 fechaNacimiento.addEventListener('change', function () {
                     if (this.value) {
-                        edadmenGo.innerText = `La edad es: ${calcularEdad(this.value)} años`;
-                    }
-                });
-
-            });
-            // woman
-            const calcularEdadWN = (fechaNacimiento) => {
-                const fechaActual = new Date();
-                const anoActual = parseInt(fechaActual.getFullYear());
-                const mesActual = parseInt(fechaActual.getMonth()) + 1;
-                const diaActual = parseInt(fechaActual.getDate());
-                
-                // 2016-07-11
-                const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
-                const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
-                const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
-                
-                let edadwomanNo = anoActual - anoNacimiento;
-                if (mesActual < mesNacimiento) {
-                    edadwomanNo--;
-                } else if (mesActual === mesNacimiento) {
-                    if (diaActual < diaNacimiento) {
-                        edadwomanNo--;
-                    }
-                }
-                return edadwomanNo;
-            };
-            window.addEventListener('load', function () {
-
-                fechaNacimiento.addEventListener('change', function () {
-                    if (this.value) {
-                        edadwomanNo.innerText = `La edad es: ${calcularEdadWN(this.value)} años`;
+                        edadmenGo.innerText = `Age: ${calcularEdad(this.value)} years`;
+                        edadmenNo.innerText = `Age: ${calcularEdad(this.value)} years`;
+                        edadwomanNo.innerText=`Age: ${calcularEdad(this.value)} years`;
+                        
                     }
                 });
 
@@ -416,14 +400,31 @@
         // actions
         man.onclick = () =>{
             // agregar
-            checkHB.classList.add('ocultar'),
+            
             checkHG.classList.remove('ocultar'),
             checkMG.classList.add('ocultar'),
-            checkMB.classList.remove('ocultar')
+            
             // actions
             valid.onclick = () =>{
-            form.classList.add('ocultar')
-            main1.classList.remove('ocultar')
+                form.classList.add('ocultar')
+                main1.classList.remove('ocultar')
+                nameF = nombre.value
+                h1.innerText= 'Name:'+nameF
+                
+            
+
+                if(edadfinal<18){
+                    nameF = nombre.value
+                    h2.innerText= 'Name:'+nameF
+                    
+                    main1.classList.add('ocultar')
+                    main2.classList.remove('ocultar')
+
+                    backHNO.onclick = () =>{
+                        main2.classList.add('ocultar')
+                        form.classList.remove('ocultar')
+                    }
+                }
             }
             backHGO.onclick = () =>{
             main1.classList.add('ocultar')
@@ -434,14 +435,16 @@
         }
         woman.onclick = () =>{
             // agregar
-            checkMB.classList.add('ocultar')
+            
             checkMG.classList.remove('ocultar')
             checkHG.classList.add('ocultar')
-            checkHB.classList.remove('ocultar')
+            
             // actions
             valid.onclick = () =>{
             form.classList.add('ocultar')
             main3.classList.remove('ocultar')
+                nameF = nombre.value
+                h3.innerText= 'Name:'+nameF
             }
             backMNGO.onclick = () =>{
                 main3.classList.add('ocultar')
