@@ -20,66 +20,53 @@
             
         }
         input.name{
-            border-radius: 20px;
             position: absolute;
             width: 309px;
             height: 30px;
-            background-color: #ECECEC;
-            top: 310px;
-            left: 60px;
+            background-color: #333333;
+            border-radius: 10px;
             border: 1px solid #000000;
             outline: none;
             text-indent: 10px;
-        }
-        input.contact{
-            border-radius: 20px;
-            position: absolute;
-            width: 309px;
-            height: 30px;
-            background-color: #ECECEC;
-            top: 400px;
-            left: 60px;
-            border: 1px solid #000000;
-            outline: none;
-            text-indent: 10px;
+            top: 330px;
+            left: 63px;
+            color: #ffffff99;
         }
         input#fechaNacimiento{
-            border-radius: 20px;
             position: absolute;
             width: 309px;
             height: 30px;
-            background-color: #ECECEC;
-            top: 500px;
-            left: 60px;
+            background-color: #333333;
+            border-radius: 10px;
             border: 1px solid #000000;
             outline: none;
             text-indent: 10px;
-            text-align: center;
-            padding: 2px;
+            top: 430px;
+            left: 63px;
         }
         .men{
             background: url(images/challengue/hombre.svg) no-repeat;
             width: 95px;
-            height: 95px;
+            height: 100px;
             position: absolute;
             border:none;
-            top: 140px;
-            left: 55px;
+            top: 155px;
+            left: 65px;
             cursor: pointer;
             transition: transform .2s ease-in;
             
         }
         button.men:hover{
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .woman{
             background: url(images/challengue/mujer.svg) no-repeat;
             width: 95px;
-            height: 95px;
+            height: 100px;
             position: absolute;
             border:none;
-            top: 140px;
-            left: 280px;
+            top: 155px;
+            left: 270px;
             cursor: pointer;
             transition: transform .2s ease-in;
         }
@@ -87,35 +74,27 @@
             transform: scale(1.1);
         }
        
-        .checkHG{
+        .checkHG,.checkMG{
             background: url(images/challengue/validateG.svg) no-repeat;
             width: 20px;
             height: 20px;
             position: absolute;
             margin-left: 60px;
         }
-        .checkMG{
-            background: url(images/challengue/validateG.svg) no-repeat;
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            margin-left: 60px;
-        }
         
         .validate{
+            background: url(images/challengue/validate.svg) no-repeat;
             box-sizing: border-box;
             position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #9EFE9C;
-            border: 1px solid #000000;
-            border-radius: 20px;
-            top: 554px;
-            text-align: center;
+            width: 150px;
+            height: 50px;
+            top: 530px;
             bottom: 0;
-            left: 170px;
+            left: 150px;
             cursor: pointer;
             transition: transform .2s ease-in;
+            padding: 10px;
+            border: none;
  
         }
         button.validate:hover{
@@ -132,23 +111,6 @@
             
             
         }
-        main.menGo article button.one{
-            box-sizing: border-box;
-            position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #FFA4A4;
-            border: 1px solid #000000;
-            border-radius: 20px;
-            cursor: pointer;
-            top: 554px;
-            text-align: center;
-            bottom: 0;
-            left: 170px;
-            cursor: pointer;
-
-        }
-        
         main.menNo article{
             background: url(images/challengue/menNwar.svg);
             width: 425px;
@@ -157,23 +119,28 @@
             margin: auto;
             padding: 1px;
         }
-        main.menNo article button{
+        main.womanNo article button.three,
+        main.menNo article button.two,main.menGo article button.one{
+            background: url(images/challengue/back.svg) no-repeat;
             box-sizing: border-box;
             position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #FFA4A4;
-            border: 1px solid #000000;
-            border-radius: 20px;
+            width: 150px;
             cursor: pointer;
-            top: 554px;
-            text-align: center;
+            width: 150px;
+            height: 50px;
+            top: 530px;
             bottom: 0;
-            left: 170px;
-            
+            left: 150px;
             cursor: pointer;
+            border: none;
+            transition: transform .2s ease-in;
 
         }
+        main.womanNo article button.three:hover,
+        main.menNo article button.two:hover,main.menGo article button.one:hover{
+            transform: scale(1.1);
+        }
+
         main.womanNo article{
             background: url(images/challengue/womanNwar.svg);
             width: 425px;
@@ -182,23 +149,7 @@
             margin: auto;
             padding: 1px;
         }
-        main.womanNo article button.three{
-            box-sizing: border-box;
-            position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #FFA4A4;
-            border: 1px solid #000000;
-            border-radius: 20px;
-            cursor: pointer;
-            top: 554px;
-            text-align: center;
-            bottom: 0;
-            left: 170px;
-            cursor: pointer;
-
-        }
-        /* main.menNo,main.womanNo,main.form{
+        /* main.menGo ,main.womanNo,main.form{
             display: none;
         } */
         h1#edadmenGo,h1#edadmenNo,h1#edadwomanNo{
@@ -207,10 +158,10 @@
             margin-left: 136px;
             margin-top:250px;
             text-indent: 5px;
+            background-color: #333333;
             border-radius: 10px;
-            border: 2px solid black;
-            background: rgb(207, 207, 207);
-     
+            border: 1px solid #000000;
+            color: #ffffff99;
             position: absolute;
             font-size: 13px;
         }
@@ -220,16 +171,19 @@
             margin-left: 136px;
             margin-top:200px;
             text-indent: 5px;
-
+            color: #ffffff99;
+            background-color: #333333;
             border-radius: 10px;
-            border: 2px solid black;
-            background: rgb(207, 207, 207);
+            border: 1px solid #000000;
             position: absolute;
             font-size: 13px;
         }
         
         .ocultar{
             display: none;
+        }
+        section.information1,section.information2,section.information3{
+            margin-top: 54px;
         }
     </style>
 </head>
@@ -244,13 +198,13 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <section>
-                <h1 id="edadmenGo">edad</h1>
-                <h1 id="nameGO">nombre</h1>
+            <section class="information1">
+                <h1 id="edadmenGo"></h1>
+                <h1 id="nameGO"></h1>
             </section>
             
             <footer>
-                <button class="one">Back</button>
+                <button class="one"></button>
             </footer>
             
         </article>
@@ -266,12 +220,12 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <section>
+            <section class="information2">
                 <h1 id="edadmenNo"></h1>
                 <h1 id="nameNo"></h1>
             </section>
             <footer>
-                <button class="two">Back</button>
+                <button class="two"></button>
             </footer>
            
             
@@ -288,13 +242,13 @@
             <h1>Challengue</h1>
         </header>
         <article>
-            <section>
-                <h1 id="edadwomanNo">Tu</h1>
+            <section class="information3">
+                <h1 id="edadwomanNo"></h1>
                 <h1 id="nameW"></h1>
             </section>
             
             <footer>
-                <button class="three">Back</button>
+                <button class="three"></button>
             </footer>
             
             
@@ -322,12 +276,11 @@
                 </button>
             </header>
             <form class="information">
-                <input type="text" class="name">
-                <input type="text" class="contact" >
+                <input type="text" class="name" required id="nameperson">
                 <input type="date" id="fechaNacimiento">
             </form>
             <footer>
-                    <button class="validate">Validate</button>
+                    <button class="validate"></button>
             </footer>
         </article>
     </main>
@@ -359,6 +312,7 @@
         const backHGO = document.querySelector('button.one')
         const backMNGO = document.querySelector('button.three')
         const backHNO = document.querySelector('button.two')
+        const nameperson = document.getElementById('nameperson')
         
         const checkHG = document.querySelector('section.checkHG')
         const checkMG = document.querySelector('section.checkMG')
@@ -410,10 +364,16 @@
                 main1.classList.remove('ocultar')
                 nameF = nombre.value
                 h1.innerText= 'Name:'+nameF
+
+                
                 
             
 
                 if(edadfinal<18){
+                    if(nameperson.value.length == 0){
+                    alert('Llene los campos')
+                    return
+                    }
                     nameF = nombre.value
                     h2.innerText= 'Name:'+nameF
                     
@@ -425,6 +385,7 @@
                         form.classList.remove('ocultar')
                     }
                 }
+                
             }
             backHGO.onclick = () =>{
             main1.classList.add('ocultar')
@@ -441,10 +402,16 @@
             
             // actions
             valid.onclick = () =>{
-            form.classList.add('ocultar')
-            main3.classList.remove('ocultar')
+                if(nameperson.value.length == 0){
+                    alert('Llene los campos')
+                    return
+                }
+                form.classList.add('ocultar')
+                main3.classList.remove('ocultar')
                 nameF = nombre.value
                 h3.innerText= 'Name:'+nameF
+
+                
             }
             backMNGO.onclick = () =>{
                 main3.classList.add('ocultar')
