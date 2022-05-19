@@ -6,14 +6,13 @@
 		font-family: 'Montserrat Alternates', sans-serif;
 	}
 	body{
-		background: url(imagesF/fondo1.jpg)no-repeat;
+		background: url(imagesF/fondo1.svg)no-repeat;
 		background-size: cover;
 	}
 	.capa{
 		position: fixed;
 		width: 100%;
 		height: 100vh;
-		background-color: #00000050;
 		z-index: -1;
 		top: 0;left: 0;
 	}
