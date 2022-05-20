@@ -360,20 +360,20 @@
             
             // actions
             valid.onclick = () =>{
+                if(nameperson.value.length == 0){
+                    alert('Llene los campos')
+                    return
+                    }
+                
                 form.classList.add('ocultar')
                 main1.classList.remove('ocultar')
                 nameF = nombre.value
                 h1.innerText= 'Name:'+nameF
 
                 
-                
-            
-
                 if(edadfinal<18){
-                    if(nameperson.value.length == 0){
-                    alert('Llene los campos')
-                    return
-                    }
+                    
+                    
                     nameF = nombre.value
                     h2.innerText= 'Name:'+nameF
                     

@@ -102,15 +102,18 @@ button{
     border: none;
     cursor: pointer;
     transition: all .3s ease-in;
+
     
 }
-button.home{
+button.home1{
     background: url(../../../imagesF/home.png) no-repeat;
     width: 73px;
     height: 73px;
     border: none;
     cursor: pointer;
     transition: all .3s ease-in;
+    position: absolute;
+    top: -439px;
     
 }
 button:hover{
@@ -118,6 +121,13 @@ button:hover{
 }
 article *{
     padding: 20px;
+}
+@media (max-width: 1920px) {
+    button.home1{
+        position: absolute;
+        bottom: 475px;
+        
+    }
 }
 
 

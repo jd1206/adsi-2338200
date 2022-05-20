@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>  Main    Pug</title>
+    <link rel="Icon" href="../../imagesF/pug.png">
     <style>
        html {
     color: black;
@@ -102,15 +103,18 @@ button{
     border: none;
     cursor: pointer;
     transition: all .3s ease-in;
+
     
 }
-button.home{
+button.home1{
     background: url(../../../imagesF/home.png) no-repeat;
     width: 73px;
     height: 73px;
     border: none;
     cursor: pointer;
     transition: all .3s ease-in;
+    position: absolute;
+    top: -439px;
     
 }
 button:hover{
@@ -118,6 +122,13 @@ button:hover{
 }
 article *{
     padding: 20px;
+}
+@media (max-width: 1920px) {
+    button.home1{
+        position: absolute;
+        bottom: 475px;
+        
+    }
 }
 
 
@@ -128,7 +139,7 @@ article *{
       <header>
         <nav>
           <h1> Main    Pug</h1><a href="../../index.html">
-            <button class="home"> </button></a>
+            <button class="home1"> </button></a>
         </nav>
       </header>
       <section>

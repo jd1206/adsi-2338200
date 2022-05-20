@@ -22,7 +22,7 @@ main header h1 {
     border-radius: 6px;
     color: white;
     padding: 20px;
-    position: relative;
+    /* position: relative; */
     margin-top: 0;
     text-align: center;
 }
@@ -91,6 +91,7 @@ button{
     border: none;
     cursor: pointer;
     transition: all .3s ease-in;
+    top: -435px;
     
 }
 button:hover{
@@ -99,4 +100,31 @@ button:hover{
 article *{
     padding: 20px;
 }
+@media (max-width: 415px){
+    li{
+        
+        width: 200px;
+    }
+    section{
+        
+        margin: auto;
+    }
+    button.home1{
+        
+       margin-top:100px ;
+       
+        
+    }
+    button.home1{
+        position: absolute;
+        bottom: 290px;
+    }
 
+
+}
+@media (max-width: 1920px) {
+    button.home1{
+        position: absolute;
+        bottom:468px;
+    }
+}

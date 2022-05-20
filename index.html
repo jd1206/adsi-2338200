@@ -2,77 +2,86 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Menù Lateral con Css</title>
+	<title>Lenguajes</title>
 	<link rel="stylesheet" href="estilos.css">
+	<link rel="Icon" href="imagesF/iconoP.png">
 	<style>
-		body{
-			position: static;
-		}
-		button#emmet{
+		a#emmet{
 			background: url(imagesF/emmet.svg) no-repeat;
-			width: 80px;
 			height: 80px;
-			cursor: pointer;
+    		width: 250px;
 			border: none;
-			
-			margin-left: 110px;
-			margin-top:336px;
+			background-size: 62px;
+    		background-position: 177px 10px;
+			position: sticky;
 		}
-		button#html4{
+		/* a#emmet:hover{
+			border-left:2px solid grey ;
+			background-color: #00000090;
+		} */
+		a#html4{
+			border: 2px solid red;
 			background: url(imagesF/html5.svg) no-repeat;
-			width: 95px;
-			height: 95px;
-			top: 152px;
-			left: 205px;
-			position: absolute;
-			cursor: pointer;
 			border: none;
-			
-			
-			
-		}
-		button#css{
-			background: url(imagesF/css.svg) no-repeat;
-			width: 80px;
+			background-size: 62px;
 			height: 80px;
-			position: absolute;
-			cursor: pointer;
-			border: none;
-			top: 75px;
-			left: 385px;
+    		width: 250px;
+			margin: 2px 0px;
+			background-position: 177px 10px;
+			position: sticky;
+			
+			
+			
 		}
-		button#pug{
+		a#css{
+			background: url(imagesF/css.svg) no-repeat;
+			background-size: 62px;
+			background-position: 177px 10px;
+			height: 80px;
+    		width: 250px;
+			position: sticky;
+		}
+		#pug{
 			background: url(imagesF/pug.png) no-repeat;
-			width: 70px;
-			height: 70px;
-			position: absolute;
-			cursor: pointer;
-			border: none;
+			background-size: 62px;
+			background-position: 177px 10px;
+			height: 80px;
+    		width: 250px;
+			position: sticky;
 		}
-		button#sass{
+		#sass{
 			background: url(imagesF/sass.svg) no-repeat;
-			width: 100px;
-			height: 100px;
-			position: absolute;
-			cursor: pointer;
-			border: none;
+			background-size: 62px;
+			background-position: 177px 10px;
+			height: 80px;
+    		width: 250px;
+			position: sticky;
 		}
-		button#javascript{
+		#javascript{
 			background: url(imagesF/javascript.svg) no-repeat;
-			width: 90px;
-			height: 90px;
-			position: absolute;
-			cursor: pointer;
-			border: none;
+			background-size: 62px;
+			background-position: 177px 10px;
+			height: 80px;
+    		width: 250px;
+			position: sticky;
+		}
+		section{
+			position: relative;
+		}
+		#emmet{
+			display: inline-block;
+			position: relative;
+			
+			
 		}
 	</style>
 </head>
 <body>
 	<header class="header">
 		<div class="container">
-		<div class="btn-menu">
-			<label for="btn-menu">☰</label>
-		</div>
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
 			<div class="logo">
 				<h1>Desarrollo Web</h1>
 			</div>
@@ -84,60 +93,20 @@
 			</nav>
 		</div>
 	</header>
-	<article>
-		<section>
-			<div>
-				<a  href="">
-					<button id="emmet"></button>
-				</a>
-			</div>
-			<div>
-				<a  href="">
-					<button id="html4"></button>
-				</a>
-			</div>
-			<div>
-				<a  href="">
-					<button id="css"></button>
-				</a>
-			</div>
-			<div>
-				<a  href="">
-					<button id="css3"></button>
-				</a>
-			</div>
-			<div>
-				<a  href="">
-					<button id="pug"></button>
-				</a>
-			</div>
-			<div>
-				<a  href="">
-					<button id="sass"></button>
-				</a>
-			</div>
-			<div>
-				<a  href="">
-					<button id="javascript"></button>
-				</a>
-			</div>
-			
-			
-		</section>
-	</article>
+	
 	<div class="capa"></div>
 <!--	--------------->
 <input type="checkbox" id="btn-menu">
 <div class="container-menu">
 	<div class="cont-menu">
 		<nav>
-			<a href="/01-emmet/">Emmet</a>
-			<a href="/02-HTML4/">HTML4</a>
-			<a href="/03-CSS/">CSS</a>
-			<a href="/04-CSS3/">CSS3</a>
-			<a href="/05-PUG/html/">PUG</a>
-			<a href="/06-SASS/">SASS</a>
-			<a href="/07-JAVASCRIPT/">JAVASCRIPT</a>
+			<a href="/01-emmet/" id="emmet">EMMET</a>
+			<a href="/02-HTML4/" id="html4">HTML4</a>
+			<a href="/03-CSS/" id="css">CSS</a>
+			<a href="/04-CSS3/" id="css3">CSS3</a>
+			<a href="/05-PUG/html/" id="pug">PUG</a>
+			<a href="/06-SASS/" id="sass">SASS</a>
+			<a href="/07-JAVASCRIPT/" id="javascript">JAVASCRIPT</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
 	</div>

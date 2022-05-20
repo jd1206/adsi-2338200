@@ -60,3 +60,9 @@ main nav.menu li a:hover span {
     color: #08313b;
     transform: rotate(360deg);
 }
+@media (max-width: 1920px) {
+    button.home1{
+        position: absolute;
+        left: 340px;
+    }
+}

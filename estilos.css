@@ -6,8 +6,8 @@
 		font-family: 'Montserrat Alternates', sans-serif;
 	}
 	body{
-		background: url(imagesF/fondo1.svg)no-repeat;
-		background-size: cover;
+		background: url(https://i.pinimg.com/originals/c6/33/c2/c633c20ede82f0e0ced7d570dbe3a1f3.gif);
+		
 	}
 	.capa{
 		position: fixed;
@@ -28,9 +28,10 @@
 		max-width: 1200px;
 		margin: auto;
 	}
-	.container .btn-menu, .logo{
+	.btn-menu, .logo{
 		float: left;
 		line-height:100px;
+		position: relative;
 	}
 	.container .btn-menu label{
 		color: #fff;
@@ -105,10 +106,10 @@
 		border-left: 5px solid transparent;
 		transition: all 400ms ease;
 	}
-	.cont-menu nav a:hover{
+	/* .cont-menu nav a:hover{
 		border-left: 5px solid #c7c7c7;
 		background: #1f1f1f;
-	}
+	} */
 	.cont-menu label{
 		position: absolute;
 		right: 5px;

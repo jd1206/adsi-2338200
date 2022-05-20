@@ -91,6 +91,7 @@ button{
     border: none;
     cursor: pointer;
     transition: all .3s ease-in;
+    top: -435px;
     
 }
 button:hover{
@@ -110,5 +111,11 @@ button:hover{
 .container .btn-menu, .logo{
     float: left;
     line-height:100px;
+}
+@media (max-width: 1920px) {
+    button.home1{
+        position: absolute;
+        bottom:468px;
+    }
 }
 
