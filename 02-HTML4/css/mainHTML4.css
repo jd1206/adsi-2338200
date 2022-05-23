@@ -100,7 +100,7 @@ button:hover{
 article *{
     padding: 20px;
 }
-@media (max-width: 415px){
+@media (max-width: 414px){
     li{
         
         width: 200px;
@@ -117,7 +117,7 @@ article *{
     }
     button.home1{
         position: absolute;
-        bottom: 290px;
+        bottom: 100px;
     }
 
 
