@@ -4,93 +4,180 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Queries</title>
+    <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-        *{
-            transition: all 0.2s ease-in;
-        }
         body{
-            background-color: #003675;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header{
+            background-color: #384f07;
+            height: 80px;
+            
+        }
+        li{
+            display: inline-block;
+            margin-right:60px;
+
+        }
+        .logo{
+            border: 2px solid red;
+            height: 50px;
+            width: 50px;
+            flex-shrink: 0;
+        }
+        nav{
+            display: flex;
+            padding: 5px;
+        }
+        ul{
+            margin-top: 40px;
+            list-style: none;
             color: #ffffff99;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
+            margin-left: 50px;
+        
+
         }
-        main{
-            padding: 2rem;
+        .contenido{
+            background-color: grey;
+            flex-basis: 750px;
+            flex-grow: 2;
+            flex-shrink: 0;
         }
-        main header figure.logo{
-            background: url(images/pepsi01.png)no-repeat center;
-            width: 919px;
-            height: 354px;
-            margin: 20px auto;
-        }
-        main p{
-            line-height: 2rem;
-            text-align: justify;
-            
-        }
-        main h1{
-            font-size: 2.6rem;
+        .preguntas_frecuentes{
             text-align: center;
+            margin-top: 70px;
         }
-        main h1 span.small,
-        main h1 span.medium{
-            display: none;
+        .container2{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            flex-shrink: 0;
         }
-        /*Media queries*/
-        @media (max-width: 1024px){
-            main header figure.logo{
-            background: url(images/pepsi02.png)no-repeat center;
-            width: 348px;
-            height: 370px;
-            margin: 20px auto;
-            }
+        .items{
+            background-color: #384f07;
+            margin: 5px;
+            min-width: 400px;
+            padding: 10px;
+            flex-shrink: 0;
+            flex: 1;
+        }
+        .items:last-child{
+            width: 100px;
+        }
+        .aside{
+            background-color: #384f07;
+            flex-basis: 400px;
+            flex-grow: 2;
+            
+        }
+        .container3{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
 
-            main h1 span.small,
-            main h1 span.large{
-            display: none;
+           
+        }
+        .items2{
+            background: white;
+            height: 100px;
+            width: 100px;
+            margin:20px;
+            flex: 1;
+            
+        }
+        .footer{
+            background-color:#283809 ;
+            height: 50px;
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+        @media screen and (min-width:360px){
+            .items{
+                 min-width: 320px;
+             }
+        }
+        @media screen and (min-width:1080px){
+            .items{
+                 min-width: 800px;
+             }
+             .header{
+                 background-color: #384f07;
+                 min-height: 100px;
             
             }
-            main h1 span.medium{
-                display: inline;
-            }
-            main h1{
-                font-size: 2.8rem;
-            }
+            ul{
+                margin-top: 60px;
+        
 
-        }
-        /*Breakpoint*/
-        @media(max-width: 780px){
-            main h1 span.medium,
-            main h1 span.large{
-            display: none;
-            
             }
-            main h1 span.small{
-                display: inline;
-            }
-            main h1{
-                font-size: 2.8rem;
+            .logo{
+                position: relative;
+                height: 80px;
+                width: 80px;
+                left: 20px;
+                
             }
         }
+        
+       
+       
+       
     </style>
 </head>
 <body>
-    <main>
-        <header>
-            <figure class="logo"></figure>
+    <div class="container">
+        <header class=" header">
+            <nav>
+                <div class="logo"></div>
+                <ul>
+                    <li>Inicio</li>
+                    <li>Productos</li>
+                    <li>Productores</li>
+                    <li>Quienes Somos</li>
+                    <li>Contactanos</li>
+                    <li>Blog</li>
+                    <li>Mi Compra</li>
+                    <li>Mi cuenta</li>
+                </ul>
+            </nav>
         </header>
-        <section>
-            <h1>
-                Media Queries
-                <span class="large">(>1024px)</span>
-                <span class="medium">( <1024px )</span>
-                <span class="small">( <780px )</span>
-                
-            </h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum veniam tenetur iure repellendus numquam nesciunt tempora hic facere vero, iste accusantium voluptate dolorem, accusamus facilis a architecto perferendis, maiores magni impedit ducimus eligendi? Excepturi voluptatibus libero magnam doloremque error? Sunt obcaecati, expedita doloribus consequatur ullam similique aut voluptates aspernatur fuga laboriosam at sequi eum molestiae enim explicabo a ex, ab dolorum quod distinctio beatae nobis quis, voluptatibus placeat. Provident, delectus! Soluta nesciunt cumque itaque culpa quo, fugiat recusandae eius est beatae repellendus? Aperiam doloribus similique fuga odit officiis quasi iste quod veniam fugiat cupiditate consequuntur esse illo, reprehenderit ullam quaerat ipsam minima. Quo mollitia sunt quis sint earum ad suscipit, cupiditate provident fugit iste magni ducimus, aliquam totam inventore minus tenetur. Maiores ratione possimus eum perferendis rem, excepturi dolorem, explicabo delectus dolorum ipsum ducimus provident nostrum cumque voluptate commodi cupiditate dicta quae officiis atque. Dolorem, maiores? Excepturi exercitationem quia fugiat repellendus aut non voluptatum corrupti, voluptatibus nesciunt, aperiam reiciendis. Eligendi repellat eius pariatur id eum cum laudantium quidem repellendus dolores, maiores distinctio, adipisci vitae dolorem harum. Nobis, optio doloribus. Quos laudantium similique obcaecati, perferendis nobis asperiores vero quas quisquam, deleniti consequatur, maiores dolor facere deserunt eaque quaerat minima. Quia possimus nam laborum ipsam vero aut qui quaerat eos tenetur quam nemo aspernatur minima, beatae provident maxime, ex nesciunt. Recusandae qui iusto illo aliquid dolor doloremque quibusdam, adipisci earum fugiat aperiam deserunt in consequuntur eveniet sunt quasi. Distinctio aspernatur esse, aliquid architecto, corporis iste odit numquam libero suscipit maiores praesentium culpa! Sed, possimus ab ad porro fugit rem, nostrum molestias perferendis mollitia ea culpa vero! Fugiat nobis veritatis aliquid, amet enim quam voluptatibus libero delectus alias cum autem quisquam, dolores magnam eveniet illo? Architecto dignissimos vel sapiente tempore non? Totam quaerat laborum consequuntur maxime voluptate deleniti doloribus iste natus maiores illo sit repellendus dolore nemo vitae dolor, pariatur exercitationem. Iste ipsam dolorum hic adipisci perspiciatis, mollitia pariatur doloribus temporibus numquam reiciendis sapiente quam eligendi rerum nisi nobis ipsum quos possimus? Possimus error id eveniet dolores quasi corporis dolor quis porro eos odio nemo, veniam rerum nulla maxime quam beatae. Quasi quaerat natus molestias facilis laudantium nesciunt expedita veniam placeat, neque vero repudiandae facere assumenda sit quos, veritatis tempore tempora cupiditate repellat? Veniam, quasi in dolorum quod praesentium dolorem debitis totam amet! Molestiae quaerat dignissimos cum quisquam amet animi unde a velit nulla temporibus quibusdam nesciunt voluptatum adipisci nihil modi aperiam quae rem illum exercitationem, ratione repudiandae tenetur repellendus officiis tempore! Odio quasi iste atque possimus assumenda enim accusamus error incidunt dolor architecto, fugit commodi, eveniet laudantium, illum libero cumque corrupti consectetur! Possimus deserunt doloremque dolorem exercitationem commodi est id ipsam sequi consectetur eligendi temporibus architecto asperiores dicta eum, provident blanditiis facere excepturi minima nesciunt! Similique corrupti totam dignissimos laudantium incidunt ducimus nostrum ut minus repudiandae itaque maiores reprehenderit vel officiis provident, atque velit officia molestias nisi explicabo nihil minima in. Cumque suscipit architecto ut earum distinctio aspernatur cupiditate vitae, vero sit sint, voluptatum enim obcaecati reiciendis autem fugiat nisi. Aspernatur, nobis.</p>
-        </section>
-    </main>
+        <article class=" contenido">
+            <h1 class="preguntas_frecuentes">Preguntas Frecuentes</h1>
+            <div class="container2">
+                <div class="items">asdfghjklñ</div>
+                <div class="items">asdfgthyjuki</div>
+                <div class="items">gregregrggg</div>
+                <div class="items">grgergregg</div>
+                <div class="items">efwefwefwefweff</div>
+                <div class="items">fwfefwewe</div>
+                <div class="items">fewfwefwefw</div>
+                <div class="items p"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit itaque doloribus quis perspiciatis, facilis tempora hic optio numquam adipisci minima? Quo ipsum itaque dolorum provident officiis ad voluptatibus dolore suscipit. Nostrum aspernatur laborum inventore consectetur ex molestias, voluptate voluptatem aut quis maxime non ratione minima fuga nihil modi fugiat tempore atque nam eum! Quidem, sed deleniti sunt explicabo, excepturi quasi saepe enim quia perspiciatis ipsam dolorem quaerat voluptas ullam aliquid.</p></div>
+            </div>
+        </article>
+        <aside class=" aside">
+            <div class="container3">
+                <div class="items2">hgwehfgewh</div>
+                <div class="items2">hgwehfgewh</div>
+                <div class="items2">hgwehfgewh</div>
+                <div class="items2">hgwehfgewh</div>
+            </div>
+            <footer class="footer">
+                <p>Lorem ipsum, dolor</p>
+            </footer>
+        </aside>
+        
+    </div>
 </body>
 </html>
