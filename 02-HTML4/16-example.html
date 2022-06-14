@@ -6,179 +6,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            padding: 0;
-            margin: 0;
-        }
-        .container{
+        header {
             display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .header{
+            min-height: 84px;
             background-color: #384f07;
-            height: 80px;
-            flex-basis: 100%;
-            
-        }
-        li{
-            display: inline-block;
-            margin-right:60px;
-
-        }
-        .logo{
-            border: 2px solid red;
-            height: 50px;
-            width: 50px;
-            flex-shrink: 0;
-        }
-        nav{
-            display: flex;
-            padding: 5px;
-        }
-        ul{
-            margin-top: 40px;
-            list-style: none;
-            color: #ffffff99;
-            margin-left: 50px;
-        
-
-        }
-        .contenido{
-            background-color: grey;
-            flex-basis: 100%;
-            flex-grow: 2;
-            flex-shrink: 0;
-        }
-        .preguntas_frecuentes{
-            position: relative;
-            text-align: center;
-        }
-        .container2{
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            position: relative;
-            flex-shrink: 0;
-        }
-        .items{
-            background-color: #384f07;
-            margin: 5px;
-            width: 400px;
             padding: 10px;
-            flex-shrink: 0;
-            flex: 1;
         }
-        .items:last-child{
-            width: 100px;
-        }
-        .aside{
-            background-color: #384f07;
-            flex-basis: 100%;
-            flex-grow: 2;
-            
-        }
-        .container3{
+        body {
+            margin: 0;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: wrap;
+        }
+
+        h2 {
+            color: azure;
+        }
+        a {
+          
+            text-decoration: none;
+            color: azure;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 90px;
+            margin-right: 10px;
+        }
+
+        nav a {
+            font-weight: 600;
+            padding-right: 10px;
+        }
+        nav a:hover {
+            color: black;
+        }
+        aside {
+            width:100%;
+            height:186px;
+        }
+        .footer {
+            display: flex;
+            min-height: 84px;
+            background-color: #384f07;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            
+            
+        }
+
+        input {
+            border-style: none;
+            outline: none;
+            width: 140px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        .abajo {
+            border-style: none;
+            width: 80px;
+            height: 24px;
+            border-radius: 5px;
+            background-color: #9ee00d;
+            color: white;
+            cursor: pointer;
+        }
+
+        /*BOTONES*/
+        .cont {
+            padding-right: 25px;
+            padding-top: 10px;
+        }
+        .compra {
+            background: url(./img/Compra.svg) no-repeat ;
+            width: 37px;
+            height: 41px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cuenta {
+            background: url(./img/Cuenta.svg) no-repeat;
+            border: none;
+            width: 40px;
+            height: 41px;
+            cursor: pointer;
+        }
+
+        /*Redes Sociales*/
+        .ins {
+            background: url(./img/Vector.svg) no-repeat;
+            width: 55px;
+            height: 55px;
+            border: none;
+            cursor: pointer;
+        }
+        .face {
+            background: url(./img/bi_facebook.svg) no-repeat;
+            width: 55px;
+            height: 55px;
+            border: none;
+            cursor: pointer;
+        }
+        .twit {
+            background: url(./img/bi_twitter.svg) no-repeat;
+            width: 55px;
+            height: 55px;
+            border: none;
+            cursor: pointer;
+        }
+        .copy {
+            display: flex;
             justify-content: center;
+            background-color: #6a8f1b;
+            color: white;
+        }
+
+        /* ENLACES FOOTER */
+        ul {
+            list-style: none;
+        }
+        .enlaces {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        li  {
+            color: #FFFFFF;
+        }
+         .redes {
+            color: #FFFFFF;
+         }
+         .suscribete {
+            color: #FFFFFF;
+         }
+         .q {
+            color: #cec7c7;
+            cursor: pointer;
+         }
+         article{
             flex-shrink: 0;
+            display: flex;
+            flex-basis: 780px;
+         }
+         .search{
             position: relative;
-
-           
-        }
-        .items2{
-            background: white;
-            height: 100px;
-            width: 100px;
-            margin:20px;
-            flex: 1;
+            left: 50px;
+            width: 360px;
             
-        }
-        .footer{
-            background-color:#283809 ;
-            height: 50px;
-            flex-grow: 1;
-            flex-shrink: 0;
-        }
-        @media screen and (min-width:360px){
-            .items{
-                 min-width: 320px;
-             }
-        }
-        @media screen and (min-width:1080px){
-            .items{
-                 min-width: 800px;
-             }
-             .header{
-                 background-color: #384f07;
-                 min-height: 100px;
-            
-            }
-            ul{
-                margin-top: 60px;
-        
+         }
+         .buscar{
+            width: 300px;
+         }
+         .nav__link{
+            top: 11px;
+            position: relative;
+         }
+         .comcuent{
+            margin: 0px 30px;
+         }
+         .enviar{
+            width: 55px;
+         }
 
+        @media (max-width: 787px){
+            header {
+                flex-direction: column;
             }
-            .logo{
-                position: relative;
-                height: 80px;
-                width: 80px;
-                left: 20px;
+
+            nav {
+                padding: 10px 0px;
+            }
+            aside {
+                flex-direction: column;
+            }
+            .nav__link{
+                font-size: 13px;
+            }
+            .nombre__empresa{
+                font-size: 17px;
+            }
+            .search{
                 
+                width: 330px;
             }
+            .buscar {
+                width: 260px;
+            }
+            
+            .logab {
+                width: 33%;
+            }
+            .suscribete {
+                border: 2px solid papayawhip;
+            }
+            
         }
+
         
-       
-       
-       
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class=" header">
-            <nav>
-                <div class="logo"></div>
-                <ul>
-                    <li>Inicio</li>
-                    <li>Productos</li>
-                    <li>Productores</li>
-                    <li>Quienes Somos</li>
-                    <li>Contactanos</li>
-                    <li>Blog</li>
-                    <li>Mi Compra</li>
-                    <li>Mi cuenta</li>
-                </ul>
-            </nav>
-        </header>
-        <article class=" contenido">
-            <h1 class="preguntas_frecuentes">Preguntas Frecuentes</h1>
-            <div class="container2">
-                <div class="items">asdfghjklñ</div>
-                <div class="items">asdfgthyjuki</div>
-                <div class="items">gregregrggg</div>
-                <div class="items">grgergregg</div>
-                <div class="items">efwefwefwefweff</div>
-                <div class="items">fwfefwewe</div>
-                <div class="items">fewfwefwefw</div>
-                <div class="items p"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit itaque doloribus quis perspiciatis, facilis tempora hic optio numquam adipisci minima? Quo ipsum itaque dolorum provident officiis ad voluptatibus dolore suscipit. Nostrum aspernatur laborum inventore consectetur ex molestias, voluptate voluptatem aut quis maxime non ratione minima fuga nihil modi fugiat tempore atque nam eum! Quidem, sed deleniti sunt explicabo, excepturi quasi saepe enim quia perspiciatis ipsam dolorem quaerat voluptas ullam aliquid.</p></div>
+    <header>
+        <div class="logo">
+            <img src="img/icondos.svg" alt="logo__compañia">
+            <h2 class="nombre__empresa">Compra Local, apoya lo nuestro</h2>
+        </div>
+        <nav>
+            <div class="search">
+                <input type="search" name="" id="" class="buscar">
+                <input type="submit" class="enviar">
             </div>
-        </article>
-        <aside class=" aside">
-            <div class="container3">
-                <div class="items2">hgwehfgewh</div>
-                <div class="items2">hgwehfgewh</div>
-                <div class="items2">hgwehfgewh</div>
-                <div class="items2">hgwehfgewh</div>
+            <a href="" class="nav__link">Inicio</a>
+            <a href="" class="nav__link">Productos</a>
+            <a href="" class="nav__link">Productores</a>
+            <a href="" class="nav__link">Quienes somos</a>
+            <a href="" class="nav__link">Contact</a>
+            <a href="" class="nav__link">Blog</a>
+        </nav>
+        <div class="cont">
+            <button class="comcuent compra"></button>
+            <button class="comcuent cuenta"></button>
+        </div>
+    </header>
+    <article>
+
+    </article>
+    <aside>
+        <div class="footer">
+            <img src="img/Logo__Header.svg" alt="logo__compañia" class="logab">
+            <ul class="listab">
+                <li class="enlaces">Enlaces</li>
+                <li class="q">Inicio</li>
+                <li class="q">Nosotros</li>
+                <li class="q">Blog</li>
+                <li class="q">Contacto</li>
+                <li class="q">Preguntas frecuentes</li>
+            </ul>
+            <div class="redes1">
+                <h1 class="redes">Redes sociales</h1>
+                <button class="ins"></button>
+                <button class="face"></button>
+                <button class="twit"></button>
             </div>
-            <footer class="footer">
-                <p>Lorem ipsum, dolor</p>
-            </footer>
-        </aside>
-        
-    </div>
+            <div class="suscribete">
+                <h1 class="suscribete">Suscribete</h1>
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Email">
+                <button class="abajo">Suscribete</button>
+            </div>
+        </div>
+        <div class="copy">
+            <h1>Mercaconsciente 2022</h1>
+        </div>
+    </aside>
 </body>
 </html>
