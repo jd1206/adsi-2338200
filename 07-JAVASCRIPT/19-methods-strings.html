@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Strings</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        textarea,input{
+            border-radius: 10px;
+            border: 2px solid #aa0;
+        }
+        textarea{
+            margin: 0 auto;
+            
+            font-family:'Poppins';
+            font-size: 1rem;
+            width: 360px;
+            padding: 10px;
+            display: flex;
+            height: 80px;
+        }
+        div.options{
+            display: grid;
+            grid-template-columns: 1fr 20px 1fr;
+            width: 380px;
+            gap: 4px;
+            margin: 0px auto;
+            
+        }
+        div.options label:last-of-type{
+            text-align: right;
+        }
+        button{
+            display: flex;
+            color: white;
+            background-color: #aa0;
+            border: none;
+            font-family: "Poppins";
+            font-size: 1rem;
+            border-radius: 20px;
+            margin: 20px auto;
+            padding: 4px 16px;
+            transform: all 5s ease;
+
+        }
+        button:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>M. Strings</h1>
+        </header>
+        <section>
+            <textarea class="textarea" cols="30" rows="10"></textarea>
+            <div class="options">
+                <label> 
+                    <input type="radio" name="transform" class="rlow"> 
+                    Lowercase
+                </label>
+                <span>Or</span>
+                <label> 
+                    <input type="radio" name="transform" class="rupp"> 
+                    Uppercase
+                </label>
+                <input type="text" class="word-origin" placeholder="Word origin">
+                <span>For</span>
+                <input type="text" class="word-replace" placeholder="Word replace">
+                <input type="text" class="pos-origin" placeholder="Origin Position">
+                <span>To</span>
+                <input type="text" class="pos-final" placeholder="Replace Position">
+            </div>
+            <button class="btn-show">Show String</button>
+            <ul class="result"></ul>
+        </section>
+    </main>
+    <script>
+        // Elements
+        const textarea = document.querySelector(".textarea")
+        const rupp = document.querySelector(".rupp")
+        const rlow = document.querySelector(".rlow")
+        const word_origin = document.querySelector(".word-origin")
+        const word_replace = document.querySelector(".word-replace")
+        const pos_origin = document.querySelector(".pos-origin")
+        const pos_final = document.querySelector(".pos-final")
+        const btn_show = document.querySelector(".btn-show")
+        const result = document.querySelector(".result")
+        
+        // Variables
+        var upper = false
+        // events
+        rlow.onclick     = function () {upper = false}
+        rupp.onclick     = function () {upper = true}
+        btn_show.onclick = function () {
+            if(textarea.value.length > 0){
+                result.innerHTML  = "<li><strong>Original String:</strong> " + textarea.value + "</li>"
+                result.innerHTML += "<li><strong>Length String:</strong> " + textarea.value.length + " characters" + "</li>"
+                if(upper){
+                    result.innerHTML += "<li><strong>Uppercase:</strong> " + textarea.value.toUpperCase() + "</li>"
+                }else{
+                    result.innerHTML += "<li><strong>Lowercase:</strong> " + textarea.value.toLowerCase() + "</li>"
+                }
+                result.innerHTML += "<li><strong>Replace String:</strong> " + textarea.value.replace(word_origin.value ,word_replace.value) + "</li>"
+                result.innerHTML += "<li><strong>Cut String:</strong> " + textarea.value.substring(parseInt(pos_origin.value), parseInt(pos_final.value)) + "</li>"
+            }
+        }
+
+    </script>
+</body>
+</html>
