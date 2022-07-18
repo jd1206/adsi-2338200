@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challengue Baloto</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        main{
+            height: 850px;
+        }
+        .fond{
+            background: url(images/challenguebaloto/fondo.svg) no-repeat center;
+            width: 420px;
+            height: 700px;
+            margin: 0 auto;
+            
+        }
+        header{
+            display: flex;
+            justify-content: center;
+
+        }
+        .reset{
+            background: url(images/challenguebaloto/BALOTO.svg) no-repeat center;
+            width: 173px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+        }
+        .select{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 100px;
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 370px;
+        }
+        .play{
+            background: url(images/challenguebaloto/play.svg) no-repeat;
+            width: 71px;
+            height: 42px;
+            border: none;
+            bottom: 80px;
+            position: relative;
+            cursor: pointer;
+        }
+        .resett{
+            background: url(images/challenguebaloto/RESET.svg) no-repeat;
+            width: 80px;
+            height: 42px;
+            border: none;
+            bottom: 80px;
+            position: relative;
+            cursor: pointer;
+            
+        }
+        .balota1,.balota2,.balota3,.balota4,.balota5{
+            background: url(images/challenguebaloto/balota.svg)no-repeat;
+            width: 46px;
+            height: 46px;
+            margin: 0 100px;
+            color: white;
+            line-height: 3rem;
+            text-align: center;
+            font-size: 1.3rem;
+            
+        }
+        article{
+            display: flex;
+            justify-content: center;
+            
+            
+
+        }
+        .animation{
+            animation:backInDown 2s;
+        }
+        .animation6{
+            animation:backInDown 4s;
+        }
+        .primeras{
+            display: flex;
+            margin-top: 200px;
+            position: absolute;
+        }
+        .abajo{
+            display: flex;
+            margin-top: 300px;
+            position: absolute;
+        }
+        .medio{
+            display: flex;
+            margin-top: 250px;
+            position: absolute;
+        }
+        .balotgold{
+            text-align: center;
+            color: white;
+            line-height: 3rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        .balotgold{
+            background: url(images/challenguebaloto/balotagold.svg)no-repeat;
+            width: 46px;
+            height: 46px;
+            position: relative;
+            top: 130px;
+        
+        }
+        .balotaP{
+            background: url(images/challenguebaloto/balota.svg) no-repeat;
+            width: 50px;
+            height: 48px;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+        }
+        .balotaP2{
+            background: url(images/challenguebaloto/balota2.svg) no-repeat;
+            width: 50px;
+            height: 48px;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+        }
+        .next{
+            background: url(images/challenguebaloto/next.svg) no-repeat;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            margin-left: 243px;
+            margin-top: 60px;
+            cursor: pointer;
+            border: none;
+        }
+        .prev{
+            background: url(images/challenguebaloto/prev.svg) no-repeat;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            margin-left: 145px;
+            margin-top: 60px;
+            cursor: pointer;
+            border: none;
+        }
+        .ocultar{
+            display: none;
+        }
+        
+
+        
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1>  Challengue Baloto</h1>
+        </header>
+        <section class="fond">
+            <header>
+                <button class="reset"></button>
+            </header>
+            <div class="change">
+                <div class=" balotaP "></div>
+                <button class="next"></button>
+                <button class="prev"></button>
+            </div>
+            
+            <article class="balotas">
+                
+                <div class="balotgold">?</div>
+                <div class="primeras">
+                    <div class="balota1  ">?</div>
+                <div class="balota2 ">?</div>
+                </div>
+                <div class="abajo">
+                    <div class="balota3 ">?</div>
+                    <div class="balota4 ">?</div>
+                </div>
+                <div class="medio">
+                    <div class="balota5 ">?</div>
+                </div>
+                
+            </article>
+            <footer>
+                <button onclick="miReload()" class="resett ocultar"></button>
+                <button class="play"></button>
+            </footer>
+        </section>
+    </main>
+    <script>
+
+function miReload(){
+    // alert()
+    location.reload()
+}
+
+//  A   L   E   T   O   R   I   E   D   A   D
+const ball1 = document.querySelector('div.balota1')
+const ball2 = document.querySelector('div.balota2')
+const ball3 = document.querySelector('div.balota3')
+const ball4 = document.querySelector('div.balota4')
+const ball5 = document.querySelector('div.balota5')
+const ball6 = document.querySelector('div.balotgold')
+const reset = document.querySelector('button.resett')
+const esferas = ['balotaP2']
+
+
+const play= document.querySelector('button.play')
+var validate = false
+play.addEventListener('click', function() {
+    validate = true
+    if (validate == true) {
+        let vdice = Math.ceil(Math.random() * 42)
+    
+        ball1.textContent = vdice
+    }
+    if (validate == true) {
+        let vdice = Math.ceil(Math.random() * 42)
+    
+        ball2.textContent = vdice
+    }if (validate == true) {
+        let vdice = Math.ceil(Math.random() * 42)
+    
+        ball3.textContent = vdice
+    }if (validate == true) {
+        let vdice = Math.ceil(Math.random() * 42)
+    
+        ball4.textContent = vdice
+    }if (validate == true) {
+        let vdice = Math.ceil(Math.random() * 42)
+    
+        ball5.textContent = vdice
+    }if (validate == true) {
+        let vdice = Math.ceil(Math.random() * 16)
+    
+        ball6.textContent = vdice
+    }
+    ball1.classList.add('animation')
+    ball2.classList.add('animation')
+    ball3.classList.add('animation')
+    ball4.classList.add('animation')
+    ball5.classList.add('animation')
+    ball6.classList.add('animation6')
+    play.style.display="none"
+    reset.classList.remove('ocultar')
+
+})
+
+    </script>
+</body>
+</html>
