@@ -134,31 +134,49 @@
             top: 100px;
             margin: 0 auto;
         }
-        .next{
-            background: url(images/challenguebaloto/next.svg) no-repeat;
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            margin-left: 243px;
-            margin-top: 60px;
-            cursor: pointer;
-            border: none;
-        }
-        .prev{
-            background: url(images/challenguebaloto/prev.svg) no-repeat;
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            margin-left: 145px;
-            margin-top: 60px;
-            cursor: pointer;
-            border: none;
-        }
         .ocultar{
             display: none;
         }
-        
-
+        .punto{
+            background-color: white;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin: 0 20px;
+            
+        }
+        .puntos{
+            display: flex;
+            top: 106px;
+            position: relative;
+            left: 133px;
+        }
+        .esfera1{
+            background: url(images/challenguebaloto/balota.svg) no-repeat;
+            width: 50px;
+            height: 48px;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+        }
+        .esfera{
+            background: url(images/challenguebaloto/balota2.svg) no-repeat;
+            width: 50px;
+            height: 48px;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+            
+        }
+        .esfera3{
+            background: url(images/challenguebaloto/esfera3.svg) no-repeat;
+            width: 58px;
+            height: 48px;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+            
+        }
         
         
     </style>
@@ -178,9 +196,12 @@
                 <button class="reset"></button>
             </header>
             <div class="change">
-                <div class=" balotaP "></div>
-                <button class="next"></button>
-                <button class="prev"></button>
+                <div class="esfera1"></div>
+                <div class="puntos">
+                    <div class="punto punto1"></div>
+                    <div class="punto punto2"></div>
+                    <div class="punto punto3"></div>
+                </div>
             </div>
             
             <article class="balotas">
@@ -263,6 +284,23 @@ play.addEventListener('click', function() {
     reset.classList.remove('ocultar')
 
 })
+const punto1 = document.querySelector (".punto1")
+    const punto2 = document.querySelector (".punto2")
+    const punto3 = document.querySelector (".punto3")
+    const esfera1 = document.querySelector (".esfera1")
+    const esfera = document.querySelector (".esfera")
+
+    punto2.onclick = () =>{
+        esfera1.classList.add("esfera")
+        esfera1.classList.remove("esfera3","esfera1")
+    }
+    punto1.onclick = () =>{
+        esfera1.classList.remove("esfera3","esfera")
+        esfera1.classList.add("esfera1")
+    }
+    punto3.onclick = () =>{
+        esfera1.classList.add("esfera3")
+    }
 
     </script>
 </body>
