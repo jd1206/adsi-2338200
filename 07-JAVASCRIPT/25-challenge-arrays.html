@@ -195,7 +195,7 @@
                 <button class="btn_agregar"></button>
                 
             </section>
-            <footer>
+            <footer class="footer">
 
             </footer>
         </div>
@@ -204,15 +204,19 @@
         const agregar = document.querySelector('.action')
         const cartas = document.querySelectorAll('.carta')
         const btn_agregar = document.querySelector('.btn_agregar')
+        const footer = document.querySelector('.footer')
         // Globlal Variables
         var slt_car      = null
         var slt_position = null
         var slt_action   = null
         var arrays_carts = []
+        var carts
+
         cartas.forEach(element =>{
             element.addEventListener('click',(e)=>{
                 removeAnimation()
                 element.classList.add('active')
+                 carts= (element.classList[1])
 
             })
         })
@@ -237,6 +241,9 @@
         })
         btn_agregar.onclick = () =>{
             alert()
+            let div = `<div class="${carts}">HOakl</div>`
+            footer.innerHTML += div
+
         }
         btn_agregar.addEventListener('click',(e)=>{
             // alert()
