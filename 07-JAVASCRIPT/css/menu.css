@@ -1,11 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-*::-webkit-scrollbar{
-    width: 12px;
-}
-*::-webkit-scrollbar-track{
-    background-color: #00000099;
-    border: 2ps solid #aa0;
-}
 
 body {
     background: url(../images/js.jpg) no-repeat center;

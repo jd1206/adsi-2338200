@@ -16,6 +16,8 @@
             margin: 0 auto;
             width: 420px;
             height: 700px;
+            
+            
         }
         article{
             display: grid;
@@ -156,6 +158,25 @@
             cursor: pointer;
             
         }
+        footer{
+            overflow-x: auto;
+            position:relative;
+            left: 30px;
+            top:57px;
+            width: 85%;
+            height: 25%;
+            
+        }
+        .result{
+            display: flex;
+            flex-direction: row;
+            border: 2px soldid blue;
+            width: 1000px;
+        }
+        .cartStyle{
+            height: 80px;
+            width: 75px;
+        }
        
     </style>
 </head>
@@ -196,21 +217,21 @@
                 
             </section>
             <footer class="footer">
+                <section class="result">
 
+                </section>
             </footer>
         </div>
     </main>
     <script>
+        var carts
         const agregar = document.querySelector('.action')
         const cartas = document.querySelectorAll('.carta')
         const btn_agregar = document.querySelector('.btn_agregar')
         const footer = document.querySelector('.footer')
+        const result= document.querySelector('.result')
+        const position = document.querySelector('.position')
         // Globlal Variables
-        var slt_car      = null
-        var slt_position = null
-        var slt_action   = null
-        var arrays_carts = []
-        var carts
 
         cartas.forEach(element =>{
             element.addEventListener('click',(e)=>{
@@ -240,22 +261,28 @@
             }
         })
         btn_agregar.onclick = () =>{
-            alert()
-            let div = `<div class="${carts}">HOakl</div>`
-            footer.innerHTML += div
-
-        }
-        btn_agregar.addEventListener('click',(e)=>{
-            // alert()
-            cartas = document.querySelector('.active')
-            if(cartas != null){
-                // alert(cartas.getAttribute('class'))
-                alert()
-
-            }else{
-                // alert('Please escoger un personaje')
+            
+            
+            
+            if(agregar.checked != true){
+                if(position.checked!= true){
+                    result.insertAdjacentHTML ('afterbegin', `<div class="${carts} cartStyle"></div>`)
+                }else{
+                    result.insertAdjacentHTML ('beforeend', `<div class="${carts} cartStyle"></div>`)
+                }
+                
+            }else if(agregar.checked == true){
+                if(position.checked == true){
+                    divDelete = result.childNodes[(result.childNodes.length - 1)]
+                    result.removeChild(divDelete);
+                }else{
+                    let divDelete = result.childNodes[1]
+                    result.removeChild(divDelete);
+                }
             }
-        })
+        }
+        
+       
     </script>
 </body>
 </html>
