@@ -224,13 +224,14 @@
         </div>
     </main>
     <script>
-        var carts
+        var carts = []
         const agregar = document.querySelector('.action')
         const cartas = document.querySelectorAll('.carta')
         const btn_agregar = document.querySelector('.btn_agregar')
         const footer = document.querySelector('.footer')
         const result= document.querySelector('.result')
         const position = document.querySelector('.position')
+        const nposition = document.querySelector('.nposition')
         // Globlal Variables
 
         cartas.forEach(element =>{
@@ -261,26 +262,44 @@
             }
         })
         btn_agregar.onclick = () =>{
-            
-            
-            
-            if(agregar.checked != true){
-                if(position.checked!= true){
-                    result.insertAdjacentHTML ('afterbegin', `<div class="${carts} cartStyle"></div>`)
-                }else{
-                    result.insertAdjacentHTML ('beforeend', `<div class="${carts} cartStyle"></div>`)
+            if(nposition.value != ''){
+                if(agregar.checked != true){
+                    var pushNode = result.childNodes[nposition.value]
+                    var divcart = document.createElement(`div`)
+                    divcart.classList.add(`${carts}`, 'cartStyle')
+                    result.insertBefore(divcart,pushNode)
+                }else if(agregar.checked == true){
+                    var deleteNode= result.childNodes[nposition.value]
+                    result.removeChild(deleteNode)
                 }
                 
-            }else if(agregar.checked == true){
-                if(position.checked == true){
-                    divDelete = result.childNodes[(result.childNodes.length - 1)]
-                    result.removeChild(divDelete);
-                }else{
-                    let divDelete = result.childNodes[1]
-                    result.removeChild(divDelete);
-                }
+            }else{
+                    if(agregar.checked != true){
+                        if(position.checked!= true){
+                            result.insertAdjacentHTML ('afterbegin', `<div class="${carts} cartStyle"></div>`)
+                        }else{
+                            result.insertAdjacentHTML ('beforeend', `<div class="${carts} cartStyle"></div>`)
+                        }
+                }else if(agregar.checked == true){
+                    if(position.checked == true){
+                        divDelete = result.childNodes[(result.childNodes.length - 1)]
+                        result.removeChild(divDelete);
+                    }else{
+                        let divDelete = result.childNodes[0]
+                        result.removeChild(divDelete);
+                    }
             }
+            }
+            
         }
+        var position2 = 0
+        function leerInput(){
+            value = document.querySelector('.nposition').value
+            console.log(value)
+
+        }
+        
+        
         
        
     </script>
