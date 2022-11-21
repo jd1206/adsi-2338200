@@ -1,106 +1,149 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Lenguajes</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="estilos.css">
-	<link rel="Icon" href="imagesF/iconoP.png">
-	<style>
-		a#emmet{
-			background: url(imagesF/emmet.svg) no-repeat;
-			height: 80px;
-    		width: 250px;
-			border: none;
-			background-size: 62px;
-    		background-position: 177px 10px;
-			position: sticky;
-		}
-		/* a#emmet:hover{d
-			border-left:2px solid grey ;
-			background-color: #00000090;
-		} */
-		a#html4{
-			border: 2px solid red;
-			background: url(imagesF/html5.svg) no-repeat;
-			border: none;
-			background-size: 62px;
-			height: 80px;
-    		width: 250px;
-			margin: 2px 0px;
-			background-position: 177px 10px;
-			position: sticky;
-			
-			
-			
-		}
-		a#css{
-			background: url(imagesF/css.svg) no-repeat;
-			background-size: 62px;
-			background-position: 177px 10px;
-			height: 80px;
-    		width: 250px;
-			position: sticky;
-		}
-		#pug{
-			background: url(imagesF/pug.png) no-repeat;
-			background-size: 62px;
-			background-position: 177px 10px;
-			height: 80px;
-    		width: 250px;
-			position: sticky;
-		}
-		#sass{
-			background: url(imagesF/sass.svg) no-repeat;
-			background-size: 62px;
-			background-position: 177px 10px;
-			height: 80px;
-    		width: 250px;
-			position: sticky;
-		}
-		#javascript{
-			background: url(imagesF/javascript.svg) no-repeat;
-			background-size: 62px;
-			background-position: 177px 10px;
-			height: 80px;
-    		width: 250px;
-			position: sticky;
-		}
-		section{
-			position: relative;
-		}
-		#emmet{
-			display: inline-block;
-			position: relative;
-			
-			
-		}
-	</style>
+	<script src="https://kit.fontawesome.com/7a3ebb35d6.js" crossorigin="anonymous"></script>
+	<title>Document</title>
 </head>
 <body>
-	<header class="header">
-		<div class="container">
-			<div class="btn-menu">
-				<label for="btn-menu">☰</label>
+	<div class="container">
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/emmet.svg" class="emmet">
 			</div>
-			<div class="logo">
-				<h1>Desarrollo Web</h1>
+			<div class="content">
+				<a href="/01-emmet/">Emmet</a>
 			</div>
-			<nav class="menu">
-				<a href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-			</nav>
 		</div>
-	</header>
-	
-	<div class="capa"></div>
-<!--	--------------->
-<input type="checkbox" id="btn-menu">
-<div class="container-menu">
-	<div class="cont-menu">
-		<nav>
-			<a href="/01-emmet/" id="emmet">EMMET</a>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-html5"></i>
+			</div>
+			<div class="content">
+				<a href="/02-HTML4/">HTML5</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-css3"></i>
+			</div>
+			<div class="content">
+				<a href="/03-CSS/">CSS</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-css3-alt"></i>
+			</div>
+			<div class="content">
+				<a href="/04-CSS3/">CSS3</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/pug.png" alt="" class="pug" width="80px">
+			</div>
+			<div class="content">
+				<a href="/05-PUG/html/">Pug</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-sass"></i>
+			</div>
+			<div class="content">
+				<a href="/06-SASS/">Sass</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-square-js"></i>
+			</div>
+			<div class="content">
+				<a href="/07-JAVASCRIPT/">Javascript</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/jquery.png" width="80px" class="jquery">
+			</div>
+			<div class="content">
+				<a href="/09-Jquery/">JQUERY</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-bootstrap"></i>
+			</div>
+			<div class="content">
+				<a href="/10-BOOSTRAP/">BOOSTRAP</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/tailwind.png" width="100px" class="tailwind">
+			</div>
+			<div class="content">
+				<a href="/11-tailwind/">TAILWIND</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-php"></i>
+			</div>
+			<div class="content">
+				<a href=" /12-PHP/">PHP</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/sql.png" class="sql" width="130px">
+			</div>
+			<div class="content">
+				<a href="/13-SQL/">SQL</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/PDO.png" class="sql" width="110px">
+			</div>
+			<div class="content">
+				<a href="/14-pdo/">PDO</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/php8 (1).png" class="sql" width="130px">
+			</div>
+			<div class="content">
+				<a href="/16-poo/">POO</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<img src="./imagesF/mvc.jpg" class="sql" width="150px">
+			</div>
+			<div class="content">
+				<a href="/17-mvc/">MVC</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgbox">
+				<i class="fa-brands fa-laravel"></i>
+			</div>
+			<div class="content">
+				<a href="/18-Laravel/">Laravel</a>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+</html>
+<!-- <a href="/01-emmet/" id="emmet">EMMET</a>
 			<a href="/02-HTML4/" id="html4">HTML4</a>
 			<a href="/03-CSS/" id="css">CSS</a>
 			<a href="/04-CSS3/" id="css3">CSS3</a>
@@ -108,10 +151,11 @@
 			<a href="/06-SASS/" id="sass">SASS</a>
 			<a href="/07-JAVASCRIPT/" id="javascript">JAVASCRIPT</a>
 			<a href="/08-Jquery/" id="jquery">JQUERY</a>
+			<a href="/10-BOOSTRAP/" id="php">BOOSTRAP</a>
+			<a href="/11-tailwind/" id="php">TAILWIND</a>
 			<a href="/12-PHP/" id="php">PHP</a>
-		</nav>
-		<label for="btn-menu">✖️</label>
-	</div>
-</div>
-</body>
-</html>
+			<a href="/13-SQL/" id="php">SQL</a>
+			<a href="/14-pdo/" id="php">PDO</a>
+			<a href="/10-BOOSTRAP/" id="php">BOOSTRAP</a>
+			<a href="/10-BOOSTRAP/" id="php">BOOSTRAP</a>
+			<a href="/10-BOOSTRAP/" id="php">BOOSTRAP</a> -->

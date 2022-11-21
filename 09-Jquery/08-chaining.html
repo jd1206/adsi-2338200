@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/_root.scss">
+    <title>Chaining</title>
+    <style>
+         img{
+            position: relative;
+        }
+        figure{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-14213d">
+    <main class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center my-5 text-white border-bottom border-light">Chaining</h1>
+                
+                <div class="card text-center my-5">
+                    <div class="card-body">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item "><a class="link-dark" href="index.html">Main Menu (jQuery)</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Chaining</li>
+                            </ol>
+                          </nav>
+                      <section class="card-text">
+                        <figure class="text-start ">
+                            <img src="images/bills1.png" width="300px">
+                            <figcaption></figcaption>
+                        </figure>
+                        <button class="btn btn-dark">Animate!</button>
+                      </section>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function(evt){
+                $('figure img').show()
+                                .animate({width: '600px'},2000)
+                                .animate({width: '300px'},2000)
+                                .css('transform','rotateY(-360deg)')
+                                .slideUp(1000)
+                                .slideDown(1000)
+                                .fadeOut(2000)
+                                .fadeIn(1000)
+            })
+        });
+    </script>
+</body>
+</html>

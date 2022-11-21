@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/_root.scss">
+    <title>Next & Prev</title>
+    <style>
+        .bg-blue:is(:hover,:focus){
+            border: 1px #8ecae6;
+            background-color:#8ecae6 ;
+        }
+        .bg-blue{
+            color: white;
+        }
+        .btn{
+            border: none;
+        }
+        figure{
+            margin-bottom: 0;
+            filter: grayscale(1);
+            transition: all 0.5s ease-in;
+        }
+        figure figcaption{
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+        figure.active{
+            filter: grayscale(0);
+            transform: scale(1.2);
+        }
+        figure.active figcaption{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-14213d">
+    <main class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center my-5 text-white border-bottom border-light">Next & Prev</h1>
+                
+                <div class="card text-center my-5">
+                    <div class="card-body">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item "><a class="link-dark" href="index.html">Main Menu (jQuery)</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Next & Prev</li>
+                            </ol>
+                          </nav>
+                      <section class="card-text my-5">
+                        <div class="controls">
+                            <button class="btn btn-sm bg-blue btnFirst">First</button>
+                            <button class="btn btn-sm bg-blue btnAuto">Auto Play</button>
+                            <button class="btn btn-sm bg-blue btnLast">Last</button>
+                        </div>
+                        <div class="content my-5 d-flex aling-items-center justify-content-between">
+                            <button class="btn btn-prev"><img src="images/next&prev/btn-prev.png" width=""></button>
+                            <div class="carousel d-flex flex-row gap-4">
+                                <figure class="active">
+                                    <img src="images/next&prev/faceMario.png" alt="">
+                                    <figcaption>Mario</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="images/next&prev/faceScary.png" alt="">
+                                    <figcaption>Scary</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="images/next&prev/faceV.png" alt="">
+                                    <figcaption>V</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="images/next&prev/faceGap.png" alt="">
+                                    <figcaption>Gap</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="images/next&prev/faceJake.png" alt="">
+                                    <figcaption>Jake</figcaption>
+                                </figure>
+                            </div>
+                            <button class="btn btn-next"><img src="images/next&prev/btn-next.png" width=""></button>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $act = $('figure.active')
+
+            $('.btnFirst').click(function(e){
+                e.preventDefault()
+                removeActive()
+                $('figure').first().addClass('active')
+                currentActive()
+            })
+            $('.btnLast').click(function(e){
+                e.preventDefault()
+                removeActive()
+                $('figure').last().addClass('active')
+                currentActive()
+            })
+            $('.btn-next').click(function(e){
+                e.preventDefault()
+                removeActive()
+                if($($act).index()< 4){
+                    $($act).next().addClass('active')
+                    
+                }else{
+                    
+                    $('figure').first().addClass('active')
+                }
+                currentActive()
+                
+            })
+            $('.btn-prev').click(function(e){
+                e.preventDefault()
+                removeActive()
+                if($($act).index()>0){
+                    $($act).prev().addClass('active')
+                    
+                }else{
+                    removeActive()
+                    $('figure').last().addClass('active')
+                }
+                currentActive()
+                
+            })
+        });
+        function currentActive(){
+            $act = $('figure.active')
+        }
+        function removeActive(){
+            $('figure').removeClass('active')
+        }
+    </script>
+</body>
+</html>

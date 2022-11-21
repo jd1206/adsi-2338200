@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/_root.scss">
+    <title>Add & Remove</title>
+</head>
+<body class="bg-14213d">
+    <main class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center my-5 text-white border-bottom border-light">Add & Remove</h1>
+                
+                <div class="card text-center my-5">
+                    <div class="card-body">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li class="breadcrumb-item "><a class="link-dark" href="index.html">Main Menu (jQuery)</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Add & Remove</li>
+                            </ul>
+                          </nav>
+                          <hr>
+                      <section class="card-text gap-3 d-flex justify-content-center my-5">
+                        <div class="actions gap-1 d-flex flex-column ">
+                            <input type="text" class="form-control inputText" placeholder="Enter Dragon Name">
+                            <button class="btn btn-dark btnAppend">Append</button>
+                            <button class="btn btn-dark btnPrepend">Prepend</button>
+                            <button class="btn btn-dark btnAfter">After</button>
+                            <button class="btn btn-dark btnBefore">Before</button>
+                        </div>
+                        <div class="content">
+                            <ol class=" text-start list-group list-group-numbered" style="width: 240px;">
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Caraxes<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Syrax<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Meleys<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                
+                            </ol>
+                            <button class="btn btn-primary form-control mt-2 btnEmpty">Empty</button>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Remove
+            $('ol').on('click','.btnRemove',function(e){
+                e.preventDefault()
+                $(this).parent().remove()
+            })
+            // Empty
+            $('.btnEmpty').click(function(e){
+                e.preventDefault()
+                $('ol').empty()
+            })
+            // Add
+            $('.btnAppend').click(function(e){
+                e.preventDefault()
+                if($('.inputText').val().length > 0){
+                    $dragon=`<li class="list-group-item list-group-item-warning d-flex justify-content-between">${$('.inputText').val()}<span class="btn btn-danger float-end btnRemove"> &times; </span></li>`
+                    $('ol').append($dragon)
+                    $('.inputText').val('')
+                }else{
+                     alert('Please enter a Name')
+                }
+            })
+            $('.btnPrepend').click(function(e){
+                e.preventDefault()
+                if($('.inputText').val().length > 0){
+                    $dragon=`<li class="list-group-item list-group-item-warning d-flex justify-content-between">${$('.inputText').val()}<span class="btn btn-danger float-end btnRemove"> &times; </span></li>`
+                    $('ol').prepend($dragon)
+                    $('.inputText').val('')
+                }else{
+                    alert('Please enter a Name')
+                }
+            })
+            $('.btnAfter').click(function(e){
+                e.preventDefault()
+                $('ol:last').after(`<ol class=" text-start list-group list-group-numbered mt-2" style="width: 240px;">
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Spyro<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Yoshi<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Chimuelo<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                
+                            </ol>`)
+            })
+            $('.btnBefore').click(function(e){
+                e.preventDefault()
+                $('ol:first').before(`<ol class=" text-start list-group list-group-numbered  mb-2" style="width: 240px;">
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Spyro<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Yoshi<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                <li class="list-group-item list-group-item-warning d-flex justify-content-between">Chimuelo<span class="btn btn-danger float-end btnRemove"> &times; </span></li>
+                                
+                            </ol>`)
+            })
+        
+        });
+    </script>
+</body>
+</html>

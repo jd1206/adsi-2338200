@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/_root.scss">
+    <title>Template</title>
+</head>
+<body class="bg-14213d">
+    <main class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h1 class="text-center my-5 text-white border-bottom border-light">Template</h1>
+                
+                <div class="card text-start my-5">
+                    <div class="card-body">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item "><a class="link-dark" href="index.html">Main Menu (jQuery)</a></li>
+                              <li class="breadcrumb-item active" aria-current="page"><b>Todo List</b> </li>
+                            </ol>
+                          </nav>
+                      <hr>
+                     
+                      <section class="card-text">
+                        <div class="card1 border text-center rounded">
+                          <div class="card-body">
+                            <h3 class="card-title">TODO LIST</h3>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5>
+                                            <span class="badge rounded-pill bg-yellow num_tasks">1</span>
+                                            <span class="tittle_tasks">Task</span> 
+                                        </h5>
+                                        
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>
+                                            <span class="badge rounded-pill bg-yellow num_remains">1</span>
+                                            <span class="tittle_remains">Remain</span> 
+                                        </h5>
+                                    </div>
+                                </div>
+                                <hr class="border-blue">
+                                <div class="container mt-3 tasks">
+                                    <div class="row p-1  mb-1">
+                                        <div class="form-check d-flex justify-content-between align-items-center">
+                                            <input class="form-check-input" type="checkbox" id="task1" value="1">
+                                            <label class="form-check-label" for="">Learn jQuery</label>
+                                            <button class="btn btn-sm btn-secondary">&times;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="border-blue">
+                                <div class="container mt-3">
+                                    <div class="row p-1">
+                                        <div class="d-flex justify-content-between aling-items-center p-0">
+                                            <input type="text" class=" form-control text_task" placeholder="Add Task">
+                                            <button class="btn btn-success ms-2 btn_add">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $alert= `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <strong>Error!</strong> Please enter a Task!
+                        </div>`
+            $numtasks=1
+            $num_remains=1
+            // Add task
+            $('.btn_add').click(function(e){
+                e.preventDefault()
+                // Validate
+                if($('.text_task').val().length>0){
+                    $text= $('.text_task').val()
+                    updateTasks('add')
+                    updateRemains('add')
+                    $('.text_task').val('')
+                    
+                    $task = `
+                                    <div class="row p-1  mb-1">
+                                        <div class="form-check d-flex justify-content-between align-items-center">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label" for="">${$text}</label>
+                                            <button class="btn btn-sm btn-secondary">&times;</button>
+                                        </div>
+                                    </div>
+                                `
+                    $('.tasks').append($task)
+                }else{
+                    $('.card1').prepend($alert)
+                }
+            })
+            //Check Done
+            $('body').on('click','.form-check-input',function(e){
+                if($(this).prop('checked')){
+                    $(this).next().css('text-decoration','line-through')
+                    $(this).next().css('color','grey')
+                    $(this).next().next().css('background-color','#dc3545')
+                    $(this).next().next().css('border-color','#dc3545')
+                    updateRemains('delete')
+                }else{
+                    $(this).next().css('text-decoration','none')
+                    $(this).next().css('color','black')
+                    $(this).next().next().css('background-color','#6c757d')
+                    $(this).next().next().css('border-color','#6c757d')
+                    updateRemains('add')
+                }
+            })
+            // Delete task
+            $do_task=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <strong>Wait!</strong> Please do the task!
+                        </div>`
+            $('body').on('click','.btn-secondary',function(e){
+                if($(this).prev().prev().prop('checked')){
+                    $(this).closest('.row').remove()
+                    updateTasks('delete')
+                    
+                }else{
+                    
+                    if(!$(this).prev().prev().prop('checked')){
+                        $('.card1').prepend($do_task)
+                    }else{
+                        updateRemains('delete')
+                    }
+                    
+                    
+                }
+               
+            })
+            
+           
+        });
+        // functions
+        function updateTasks(act){
+            if(act=='add'){
+                $('.num_tasks').text(++$numtasks)
+            }else{
+                $('.num_tasks').text(--$numtasks)
+            }
+            if($numtasks > 1){
+                $('.tittle_tasks').text('Tasks')
+            }else{
+                $('.tittle_tasks').text('Task')
+            }
+            
+        }
+        function updateRemains(act){
+            if(act=='add'){
+                $('.num_remains').text(++$num_remains)
+            }else{
+                $('.num_remains').text(--$num_remains)
+            }
+            if($num_remains > 1){
+                $('.tittle_remains').text('Remains')
+            }else{
+                $('.tittle_remains').text('Remain')
+                if($num_remains < 0){
+                    $num_remains = 0
+                    $('.num_remains').text($num_remains)
+            }
+                
+            }
+            
+        }
+    </script>
+</body>
+</html>
