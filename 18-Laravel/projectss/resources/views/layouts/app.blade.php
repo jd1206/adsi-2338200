@@ -62,9 +62,11 @@
                     <div class="flex items-center gap-1">
 
                         <img src="{{ asset(Auth::user()->photo) }}" alt="" class="h-10 w-10 items-center">
-                        <a href="{{url('home')}}" class="m-2 underline">
-                            <span>{{ Auth::user()->fullname }}</span>
-                        </a>
+                        @auth()
+                            <a href="{{url('home')}}" class="m-2 underline">
+                                <span>{{ Auth::user()->fullname }}</span>
+                            </a>
+                        @endauth
                         
 
                         <a href="{{ route('logout') }}"
